@@ -103,8 +103,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Connexion.aspx" />
+    <Content Include="Content\ContentCSS\Accueil.css" />
     <Content Include="Content\ContentCSS\Connexion.css" />
     <Content Include="Content\ContentCSS\Inscription.css" />
+    <Content Include="Content\ContentIMG\58914.jpg" />
     <Content Include="Inscription.aspx" />
     <Content Include="Jeuxvideo.aspx" />
     <Content Include="Content\bootstrap-grid.css" />

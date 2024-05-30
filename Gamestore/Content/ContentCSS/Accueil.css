@@ -1,0 +1,21 @@
+﻿.img_content {
+    object-fit: cover;
+    width: 100%;
+    display: flex;
+    transform: rotateZ(180deg);
+}
+
+.title_default {
+    position: relative;
+    top: 0.1em;
+    margin-top: 300px;
+    margin-left: 560px;
+}
+
+.class_content {
+    position: absolute;
+    top: 3em;
+    border-radius: 20px;
+    color: white;
+    font-size: 2em;
+}

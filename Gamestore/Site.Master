@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Gamestore.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="fr">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gamestore - Boutique de vente de jeux vidéos</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="/Content/ContentCSS/Default.css" rel="stylesheet" /> 
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm">
+            <div class="container">
+                <a class="navbar-brand" runat="server" href="~/"><img src="../Content/ContentIMG/logo.png" class="logo_header" /></a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Activer/désactiver la navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Jeuxvideo">Tous nos Jeux Vidéos</a></li>
+                        <a href="/Connexion"><img src="Content/ContentIMG/connexion.png" class="photo_login"/></a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <p class="copyright">&copy; <%: DateTime.Now.Year %> - Gamestore</p>
+            <footer>
+                <div id="div_content_footer">
+                    <img src="Content/ContentIMG/logo.png" class="logo_footer" />
+                    <div class="col-md-4 col-sm-6">
+                        <div class="footerWidget">
+                            <h4 id="row_2_footer"><center>Gamestore</center></h4>
+                            <p></p>
+                            <center>Ouvert du Mardi au Samedi</center>
+                            <p></p>
+                            <center>9H00 - 18H00</center>
+                            <p></p>
+                            <center>01 23 45 67 89</center>
+                            <p></p>
+                            <center>your_email@email.com</center>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="footerWidget2">
+                            <a class="nav-link" runat="server" href="~/Politique-de-confidentialite">Politique de confidentialité</a>
+                            <p></p>
+                            <a class="nav-link" runat="server" href="~/MentionsLegales">Mentions Légales</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </form>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+</body>
+</html>

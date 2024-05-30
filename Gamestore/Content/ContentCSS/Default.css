@@ -1,0 +1,62 @@
+﻿body {
+}
+
+footer {
+    margin-left: 500px;
+}
+
+.logo_footer {
+    width: 10em;
+    height: 10em;
+    margin-left: 150px;
+    margin-top: 175px;
+}
+
+.footerWidget {
+    margin-top: 150px;
+    color: white;
+    margin-left: 200px;
+}
+
+.footerWidget2 {
+    margin-top: 220px;
+    color: white;
+    margin-left: 200px;
+}
+
+.copyright {
+    text-align: center;
+}
+
+.logo_header{
+    width: 2em;
+    height: 2em;
+}
+
+#div_content_footer {
+    background-color: #484848;
+    height: 500px;
+    width: 1350px;
+    display: flex;
+    position: relative;
+    right: 500px;
+}
+
+.photo_login {
+    width: 2em;
+    height: 2em;
+    margin-left: 500px;
+    margin-top: 5px;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-item{
+    margin-left: 50px;
+}
+
+.navbar {
+    background-color: #ea7068;
+}

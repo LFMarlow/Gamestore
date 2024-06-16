@@ -60,6 +60,15 @@ namespace Gamestore
         protected global::System.Web.UI.WebControls.TextBox TxtBoxMDPConnexion;
 
         /// <summary>
+        /// Contrôle HPLoubli.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HPLoubli;
+
+        /// <summary>
         /// Contrôle BtnConnexion.
         /// </summary>
         /// <remarks>

@@ -50,15 +50,24 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Accueil</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Jeuxvideo">Tous nos Jeux Vidéos</a></li>
-                        <a href="/Connexion"><img src="Content/ContentIMG/connexion.png" class="photo_login"/></a>
+                        <%if (!Convert.ToBoolean(Session["EstConnecte"]))
+                          { %>
+                              <a href="/Connexion"><img src="Content/ContentIMG/connexion.png" class="photo_login"/></a>
+                           <%}
+                          else 
+                          { %>
+                              <li class="nav-item"><a class="nav-link mon_compte" runat="server" href="~/MonCompte">Mon Compte</a></li>
+                              <asp:Button ID="BtnDeconnexion" CssClass="BtnDeco" runat="server" Text="Deconnexion" OnClick="BtnDeconnexion_Click" />
+                           <%}%>
                     </ul>
                 </div>
             </div>
         </nav>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
+              
             </asp:ContentPlaceHolder>
-            <hr />
+            <hr class="separate" />
             <p class="copyright">&copy; <%: DateTime.Now.Year %> - Gamestore</p>
             <footer>
                 <div id="div_content_footer">

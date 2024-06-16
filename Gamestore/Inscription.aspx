@@ -25,7 +25,7 @@
             <asp:TextBox class="TxtBx" ID="TxtBoxAP" placeholder="Votre Adresse Postal" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:Button class="BtnInscr" ID="BtnInscription" runat="server" Text="S'inscrire" />
+            <asp:Button class="BtnInscr" ID="BtnInscription" runat="server" Text="S'inscrire" OnClick="BtnInscription_Click" />
             <br />
             <br />
         </div>

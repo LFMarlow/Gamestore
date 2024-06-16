@@ -1,5 +1,6 @@
 ﻿h2 {
     margin: auto;
+    color: white;
 }
 
 .BtnConnexion {
@@ -17,4 +18,9 @@
     margin: auto;
     display: grid;
     place-items: center;
+    color: white;
+}
+
+.LabelConnect{
+    color: white;
 }

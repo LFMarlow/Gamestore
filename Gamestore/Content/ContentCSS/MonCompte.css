@@ -1,0 +1,143 @@
+﻿.main_account {
+    margin-bottom: 3px;
+    padding: 20px 13px;
+    position: relative;
+    overflow: hidden;
+}
+
+.div_aside {
+    display: flex;
+    justify-content: center;
+}
+
+.left_aside {
+    width: 15%;
+}
+
+
+
+.hello {
+    margin-bottom: 3px;
+    overflow: hidden;
+    padding: 20px 13px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    backdrop-filter: blur(30px) saturate(100%);
+}
+
+.btnDisconnect {
+    border: 2px solid #e61414;
+    border-color: #e61414;
+    color: #e61414;
+    -webkit-font-smoothing: antialiased;
+    -webkit-appearance: none;
+    border-radius: 40px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 10px 10px 0;
+    padding: 10px 17px 9px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+    .btnDisconnect:hover {
+        background-color: #e61414;
+        color: white;
+    }
+
+.right_aside {
+    margin-top: 80px;
+    margin-left: 150px;
+}
+
+.title_menu {
+    color: white;
+    text-align: center;
+}
+
+.cvg {
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(30px) saturate(100%);
+}
+
+.cvg_menu {
+    color: white;
+    width: 78%;
+
+}
+
+.info_container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cvg_first_section {
+    display: flex;
+    align-items: baseline;
+}
+
+.title_game {
+    margin-left: 50px;
+}
+
+.price_game {
+    margin-left: 50px;
+}
+
+.qte_game {
+    margin-left: 50px;
+}
+
+.info_container_second {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cvg_second_section {
+    display: flex;
+    align-items: baseline;
+}
+
+.genre_game {
+    margin-left: 50px;
+}
+
+.TxtBoxDescription {
+    width: 600px;
+    height: 150px
+}
+
+.description_cvg {
+    display: grid;
+    justify-content: center;
+}
+
+.div_btn {
+    display: flex;
+    justify-content: center;
+}
+
+.info_container_ce {
+    display: grid;
+    justify-content: center;
+}
+
+.ce_first_section {
+    display: grid;
+}
+
+.img_game {
+    width: 400px;
+    border-radius: 30px;
+}

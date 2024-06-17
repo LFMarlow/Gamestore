@@ -1,0 +1,18 @@
+﻿h2 {
+    margin: auto;
+}
+
+.TxtBx {
+    display: inline-block;
+    margin: auto;
+}
+
+.BtnInscr {
+    display: block;
+    margin: auto;
+}
+
+#div_content {
+    display: grid;
+    text-align-last: center;
+}

@@ -1,3 +1,5 @@
+﻿
+
 .title_default {
     position: relative;
     top: 0.1em;
@@ -36,10 +38,6 @@
 #carouselSold {
     width: 50%;
     margin: auto;
-}
-
-.coursel-inner {
-	  width: auto;
 }
 
 .carousel-control-next-icon {

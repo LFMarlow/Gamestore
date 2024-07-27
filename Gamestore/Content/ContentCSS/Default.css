@@ -62,3 +62,18 @@ footer {
 .navbar {
     background-color: #ea7068;
 }
+
+.separate {
+    margin: 1rem 0;
+    color: white;
+    opacity: 2;
+}
+
+.mon_compte {
+    margin-left: 350px;
+}
+
+.BtnDeco {
+    border-radius: 20px;
+    background-color: #ea7068;
+}

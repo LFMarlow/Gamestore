@@ -1,0 +1,29 @@
+﻿.title_default{
+    color: white;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    gap: 35px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.info {
+    padding: 10px;
+}
+
+.img_game {
+    width: 400px;
+    border-radius: 30px;
+}
+
+.separate {
+    margin: 1rem 0;
+    color: white;
+    opacity: 2;
+}
+
+.DDLFilterPlateforme{
+    
+}

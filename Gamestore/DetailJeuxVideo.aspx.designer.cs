@@ -11,88 +11,115 @@ namespace Gamestore
 {
 
 
-    public partial class Connexion
+    public partial class DetailJeuxVideo
     {
 
         /// <summary>
-        /// Contrôle LblConnexion.
+        /// Contrôle IMGGame.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblConnexion;
+        protected global::System.Web.UI.WebControls.Image IMGGame;
 
         /// <summary>
-        /// Contrôle LblMailConnexion.
+        /// Contrôle LblTitleGame.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMailConnexion;
+        protected global::System.Web.UI.WebControls.Label LblTitleGame;
 
         /// <summary>
-        /// Contrôle TxtBoxMailConnexion.
+        /// Contrôle bi_check.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtBoxMailConnexion;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl bi_check;
 
         /// <summary>
-        /// Contrôle LblMDPConnexion.
+        /// Contrôle LblStock.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMDPConnexion;
+        protected global::System.Web.UI.WebControls.Label LblStock;
 
         /// <summary>
-        /// Contrôle TxtBoxMDPConnexion.
+        /// Contrôle bi_cross.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtBoxMDPConnexion;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl bi_cross;
 
         /// <summary>
-        /// Contrôle HPLoubli.
+        /// Contrôle LblStockVide.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HPLoubli;
+        protected global::System.Web.UI.WebControls.Label LblStockVide;
 
         /// <summary>
-        /// Contrôle BtnConnexion.
+        /// Contrôle LblPEGI.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnConnexion;
+        protected global::System.Web.UI.WebControls.Label LblPEGI;
 
         /// <summary>
-        /// Contrôle LblNoRegister.
+        /// Contrôle LblGenre.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblNoRegister;
+        protected global::System.Web.UI.WebControls.Label LblGenre;
 
         /// <summary>
-        /// Contrôle HPLInscription.
+        /// Contrôle DDLPlateforme.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HPLInscription;
+        protected global::System.Web.UI.WebControls.DropDownList DDLPlateforme;
+
+        /// <summary>
+        /// Contrôle LblPrice.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblPrice;
+
+        /// <summary>
+        /// Contrôle Button1.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// Contrôle BulletListDescription.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.BulletedList BulletListDescription;
     }
 }

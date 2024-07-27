@@ -11,88 +11,61 @@ namespace Gamestore
 {
 
 
-    public partial class Connexion
+    public partial class RedefinirPassword
     {
 
         /// <summary>
-        /// Contrôle LblConnexion.
+        /// Contrôle LblRedefinirPassword.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblConnexion;
+        protected global::System.Web.UI.WebControls.Label LblRedefinirPassword;
 
         /// <summary>
-        /// Contrôle LblMailConnexion.
+        /// Contrôle LblFirstMDP.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMailConnexion;
+        protected global::System.Web.UI.WebControls.Label LblFirstMDP;
 
         /// <summary>
-        /// Contrôle TxtBoxMailConnexion.
+        /// Contrôle TxtBoxFirstMDP.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtBoxMailConnexion;
+        protected global::System.Web.UI.WebControls.TextBox TxtBoxFirstMDP;
 
         /// <summary>
-        /// Contrôle LblMDPConnexion.
+        /// Contrôle LblSecondMDP.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMDPConnexion;
+        protected global::System.Web.UI.WebControls.Label LblSecondMDP;
 
         /// <summary>
-        /// Contrôle TxtBoxMDPConnexion.
+        /// Contrôle TxtBoxSecondMDP.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtBoxMDPConnexion;
+        protected global::System.Web.UI.WebControls.TextBox TxtBoxSecondMDP;
 
         /// <summary>
-        /// Contrôle HPLoubli.
+        /// Contrôle BtnNewPassword.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HPLoubli;
-
-        /// <summary>
-        /// Contrôle BtnConnexion.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnConnexion;
-
-        /// <summary>
-        /// Contrôle LblNoRegister.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblNoRegister;
-
-        /// <summary>
-        /// Contrôle HPLInscription.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HPLInscription;
+        protected global::System.Web.UI.WebControls.Button BtnNewPassword;
     }
 }

@@ -11,7 +11,9 @@ namespace Gamestore
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DDLGenre.Items.Add("MMORPG");
+            DDLPrice.Items.Add("150€");
+            DDLPlateforme.Items.Add("Console");
         }
     }
 }

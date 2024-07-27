@@ -87,15 +87,6 @@ namespace Gamestore
         protected global::System.Web.UI.WebControls.Label LblGenre;
 
         /// <summary>
-        /// Contrôle DDLPlateforme.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLPlateforme;
-
-        /// <summary>
         /// Contrôle LblPrice.
         /// </summary>
         /// <remarks>
@@ -105,13 +96,49 @@ namespace Gamestore
         protected global::System.Web.UI.WebControls.Label LblPrice;
 
         /// <summary>
-        /// Contrôle Button1.
+        /// Contrôle LblDiscount.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Label LblDiscount;
+
+        /// <summary>
+        /// Contrôle LblPriceDiscount.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblPriceDiscount;
+
+        /// <summary>
+        /// Contrôle div_check.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_check;
+
+        /// <summary>
+        /// Contrôle LblAlreadyInCart.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblAlreadyInCart;
+
+        /// <summary>
+        /// Contrôle BtnAddCart.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnAddCart;
 
         /// <summary>
         /// Contrôle BulletListDescription.

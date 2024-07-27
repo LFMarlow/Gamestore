@@ -20,7 +20,7 @@
 </head>
 <body>
     <form runat="server">
-        <asp:ScriptManager runat="server">
+        <asp:ScriptManager runat="server" EnablePartialRendering="true">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>
@@ -56,8 +56,8 @@
                            <%}
                           else 
                           { %>
-                              <li class="nav-item"><a class="nav-link mon_compte" runat="server" href="~/MonCompte">Mon Compte</a></li>
-                              <asp:Button ID="BtnDeconnexion" CssClass="BtnDeco" runat="server" Text="Deconnexion" OnClick="BtnDeconnexion_Click" />
+                              <li class="nav-item"><a class="nav-link mon_compte" id="link_compte" runat="server">Mon Compte</a></li>
+                              <a href="/Panier"><asp:Image ID="ImgCart" ImageUrl="Content/ContentIMG/shopping-cart.png" CssClass="photo_cart" runat="server" /></a>
                            <%}%>
                     </ul>
                 </div>

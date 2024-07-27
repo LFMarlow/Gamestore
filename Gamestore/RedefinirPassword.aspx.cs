@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gamestore.Classes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,40 +12,61 @@ namespace Gamestore
 {
     public partial class RedefinirPassword : System.Web.UI.Page
     {
+        DALGamestore objDal = new DALGamestore();
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        private static string Decrypt_AES(byte[] cipherText, byte[] key, byte[] iv)
+        protected void BtnNewPassword_Click(object sender, EventArgs e)
         {
-            if (cipherText == null || cipherText.Length <= 0)
-                throw new ArgumentNullException(nameof(cipherText));
-            if (key == null || key.Length <= 0)
-                throw new ArgumentNullException(nameof(key));
-            if (iv == null || iv.Length <= 0)
-                throw new ArgumentNullException(nameof(iv));
-
-            string plaintext;
-            using (var aesAlgo = Aes.Create())
+            if (TxtBoxFirstMDP.Text == TxtBoxSecondMDP.Text)
             {
-                aesAlgo.Key = key;
-                aesAlgo.IV = iv;
+                String tokenUsers = null;
+                tokenUsers = QueryURL();
 
-                var decryptor = aesAlgo.CreateDecryptor(aesAlgo.Key, aesAlgo.IV);
-                using (var msDecrypt = new MemoryStream(cipherText))
+                String newPassword = TxtBoxSecondMDP.Text;
+                String mailUsers = objDal.RecupMailUsersComparedWithToken(tokenUsers);
+
+                if (mailUsers != null)
                 {
-                    using (var csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    bool isOk = false;
+                    var newPasswordHash = SecurePassword.Hash(newPassword);
+                    isOk = objDal.PasswordChanged(mailUsers, newPasswordHash);
+
+                    if (isOk == true)
                     {
-                        using (var srDecrypt = new StreamReader(csDecrypt))
-                        {
-                            plaintext = srDecrypt.ReadToEnd();
-                        }
+                        Alert.Show("Mot de passe changé avec succès !");
+                        Response.Redirect("~/Connexion");
+                    }
+                    else
+                    {
+                        Alert.Show("Impossible de modifier le mot de passe.");
                     }
                 }
-            }
+                else
+                {
+                    Alert.Show("Impossible de changer le mot de passe. Veuillez contacter un Administrateur.");
+                }
 
-            return plaintext;
+            }
+            else
+            {
+                Alert.Show("Les deux mot de passe doivent-être identiques");
+            }
+        }
+
+        //Récupéré le token de l'utilisateur pour changer le mot de passe
+        public String QueryURL()
+        {
+            String str = Request.ServerVariables["HTTP_REFERER"];
+            String splitFinal = null;
+            string[] strSplit = null;
+
+            strSplit = str.Split('?');
+            splitFinal = strSplit[1];
+
+            return splitFinal;
         }
     }
 }

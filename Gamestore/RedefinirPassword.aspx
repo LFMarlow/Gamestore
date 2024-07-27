@@ -17,7 +17,7 @@
         <br />
         <br />
         <br />
-        <asp:Button ID="BtnNewPassword" runat="server" Text="Redefinir le Mot de Passe" />
+        <asp:Button ID="BtnNewPassword" runat="server" Text="Redefinir le Mot de Passe" OnClick="BtnNewPassword_Click" />
         <br />
         <br />
     </div>

@@ -8,43 +8,19 @@ namespace Gamestore.Classes
 {
     public class JeuxVideo
     {
-        public String title;
-        public String description;
-        public int pegi;
-        public String genre;
-        public int quantite;
-        public String urlImage;
-        public String editeur;
-        public String developpeur;
-        public float prix;
+        public String title { get; set; }
+        public String description { get; set; }
+        public int pegi { get; set; }
+        public String genre { get; set; }
+        public int quantite { get; set; }
+        public String urlImage { get; set; }
+        public String editeur { get; set; }
+        public String developpeur { get; set; }
+        public float prix { get; set; }
 
         public JeuxVideo()
         {
 
-        }
-
-        public JeuxVideo(string prmTitle, string prmDescription, int prmPegi, string prmGenre, int prmQuantite, string prmURL, string prmEditeur, string prmDeveloppeur, float prmPrix)
-        {
-            title = prmTitle;
-            description = prmDescription;
-            pegi = prmPegi;
-            genre = prmGenre;
-            quantite = prmQuantite;
-            urlImage = prmURL;
-            editeur = prmEditeur;
-            developpeur = prmDeveloppeur;
-            prix = prmPrix;
-        }
-
-        public JeuxVideo(string prmTitle, string prmDescription, int prmPegi, string prmGenre, int prmQuantite, string prmURL, float prmPrix)
-        {
-            title = prmTitle;
-            description = prmDescription;
-            pegi = prmPegi;
-            genre = prmGenre;
-            quantite = prmQuantite;
-            urlImage = prmURL;
-            prix = prmPrix;
         }
     }
 }

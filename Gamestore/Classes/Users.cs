@@ -7,33 +7,17 @@ namespace Gamestore.Classes
 {
     public class Users
     {
-        public String nom;
-        public String prenom;
-        public String email;
-        public String password;
-        public String roleUsers;
-        public String postalAdress;
+        public String nom { get; set; }
+        public String prenom { get; set; }
+        public String email { get; set; }
+        public String password { get; set; }
+        public String roleUsers { get; set; }
+        public String postalAdress { get; set; }
+        public String tokenUsers { get; set; }
 
         public Users()
         {
 
         }
-
-        public Users(string prmMail, string prmPassword)
-        {
-            email = prmMail;
-            password = prmPassword;
-        }
-
-        public Users(string prmNom, string prmPrenom, string prmEmail, string prmPassword, string prmRoles, string prmPostal_Adress)
-        {
-            nom = prmNom;
-            prenom = prmPrenom;
-            email = prmEmail;
-            password = prmPassword;
-            roleUsers = prmRoles;
-            postalAdress = prmPostal_Adress;
-        }
-
     }
 }

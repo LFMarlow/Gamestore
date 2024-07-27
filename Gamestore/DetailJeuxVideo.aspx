@@ -15,8 +15,6 @@
                     </h1>
                 </div>
                 <div class="subinfos">
-                    Steam
-                    <div class="spacer"></div>
                     <div class="stock">
                         <div runat="server" id="bi_check" class="bi bi-check h3"></div>
                         <asp:Label ID="LblStock" runat="server" Text=""></asp:Label>
@@ -33,14 +31,24 @@
                         <asp:Label ID="LblGenre" runat="server" Text=""></asp:Label>
                     </div>
                 </div>
-                <div class="choices">
-                    <asp:DropDownList ID="DDLPlateforme" CssClass="plateform" runat="server"></asp:DropDownList>
-                </div>
+                <br />
+                <br />
                 <div class="amount">
-                    <asp:Label ID="LblPrice" runat="server" Text=""></asp:Label>
+                    <br />
+                    <asp:Label ID="LblPrice" CssClass="LblPrice" runat="server" Text=""></asp:Label>
+                    &nbsp;
+                    &nbsp;
+                    <asp:Label ID="LblDiscount" CssClass="LblDiscount" runat="server" Text="" Visible="false"></asp:Label>
+                    &nbsp;
+                    &nbsp;
+                    <asp:Label ID="LblPriceDiscount" CssClass="LblPriceDiscount" runat="server" Text="" Visible="false"></asp:Label>
+                    <br />
+                    <br />
                 </div>
                 <div class="action">
-                    <asp:Button ID="Button1" CSSClass="btn btn-primary btn-lg" runat="server" Text="Ajouter au Panier" />
+                    <div runat="server" id="div_check" class="bi bi-check h3"></div>
+                    <asp:Label ID="LblAlreadyInCart" CssClass="already_cart" runat="server" Text="Le jeu est déjà dans votre Panier"></asp:Label>
+                    <asp:Button ID="BtnAddCart" CssClass="btn btn-primary btn-lg" runat="server" Text="Ajouter au Panier" OnClick="BtnAddCart_Click" />
                 </div>
             </div>
         </div>

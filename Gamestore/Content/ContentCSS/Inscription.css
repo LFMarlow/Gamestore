@@ -15,4 +15,5 @@
 #div_content {
     display: grid;
     text-align-last: center;
+    color: white;
 }

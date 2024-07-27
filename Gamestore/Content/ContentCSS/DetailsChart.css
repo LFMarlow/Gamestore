@@ -1,0 +1,93 @@
+﻿/* Style général pour le GridView */
+.grid_summary .GridViewSalesSummary {
+    width: 100%; /* Adaptation à la largeur du conteneur */
+    background-color: #333; /* Couleur de fond du GridView */
+    color: white; /* Couleur du texte */
+    border-collapse: collapse; /* Suppression des espaces entre les cellules */
+    font-family: Arial, sans-serif; /* Police de caractères */
+    color: white;
+}
+
+/* Style pour les en-têtes */
+.grid_summary .GridViewSalesSummary th {
+    background-color: #555; /* Couleur de fond des en-têtes */
+    padding: 8px; /* Espacement interne */
+    font-size: 16px; /* Taille de la police */
+    text-align: center;/*Alignement des en-têtes du DataGridView*/
+}
+
+/* Style pour les cellules */
+.grid_summary .GridViewSalesSummary td {
+    padding: 8px; /* Espacement interne */
+    text-align: center; /* Alignement du texte */
+    border-bottom: 1px solid #444; /* Bordure inférieure */
+ }
+
+/* Style pour les lignes en alternance */
+.grid_summary .GridViewSalesSummary tr:nth-child(odd) {
+    background-color: #383838; /* Couleur de fond pour les lignes impaires */
+}
+
+.grid_summary .GridViewSalesSummary tr:nth-child(even) {
+    background-color: #404040; /* Couleur de fond pour les lignes paires */
+}
+
+.title_menu {
+    color: white;
+    text-align: center;
+}
+
+.Lbl{
+    color: white;
+}
+
+.filter_date {
+    margin-left: 250px;
+    margin-top: -50px;
+}
+
+.filter_game {
+    margin-left: 510px;
+    margin-top: -50px;
+}
+
+.gridview-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 20px;
+}
+
+.gridview-item {
+    background: #222;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 200px; /* Adjust based on content */
+}
+
+.grid_summary_compared .gridview-container th {
+    color: white;
+    text-align: center; /*Alignement des en-têtes du DataGridView*/
+}
+
+.gridview-header {
+    font-size: 16px;
+    color: #ccc;
+}
+
+.gridview-data {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.text-green {
+    color: green;
+}
+
+.text-red {
+    color: red;
+}

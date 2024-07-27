@@ -13,6 +13,7 @@ namespace Gamestore
     {
 
         WBServiceGamestore objProxy = new WBServiceGamestore();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Convert.ToBoolean(Session["EstConnecte"]) == true)
@@ -20,7 +21,7 @@ namespace Gamestore
                 Response.Redirect("~/", false);
             }
         }
-
+        
         protected void BtnConnexion_Click(object sender, EventArgs e)
         {
 

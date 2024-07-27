@@ -100,8 +100,22 @@
     color: black;
 }
 
-.amount{
+.amount {
     color: white;
+    line-height: 15px;
+}
+
+.LblPrice {
+    font-size: 22px;
+}
+
+.LblDiscount {
+    color: orangered;
+    font-size: 25px;
+}
+
+.LblPriceDiscount {
+    font-size: 40px;
 }
 
 .action {
@@ -137,4 +151,8 @@
 
 #BulletListDescription li {
     list-style-type: none;
+}
+
+.already_cart {
+    color: white;
 }

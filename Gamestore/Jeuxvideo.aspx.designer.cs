@@ -15,30 +15,30 @@ namespace Gamestore
     {
 
         /// <summary>
-        /// Contrôle DDLGenre.
+        /// Contrôle CheckBoxGenre.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLGenre;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxGenre;
 
         /// <summary>
-        /// Contrôle DDLPrice.
+        /// Contrôle CheckBoxPrice.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLPrice;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxPrice;
 
         /// <summary>
-        /// Contrôle DDLPlateforme.
+        /// Contrôle PnlGame.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLPlateforme;
+        protected global::System.Web.UI.WebControls.Panel PnlGame;
     }
 }

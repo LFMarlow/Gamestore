@@ -1,0 +1,207 @@
+﻿.main_account {
+    margin-bottom: 3px;
+    padding: 20px 13px;
+    position: relative;
+    overflow: hidden;
+}
+
+.div_aside {
+    display: flex;
+    justify-content: center;
+}
+
+.left_aside {
+    width: 15%;
+}
+
+.hello {
+    margin-bottom: 3px;
+    overflow: hidden;
+    padding: 20px 13px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    backdrop-filter: blur(30px) saturate(100%);
+}
+
+.btnDisconnect {
+    border: 2px solid #e61414;
+    border-color: #e61414;
+    color: #e61414;
+    -webkit-font-smoothing: antialiased;
+    -webkit-appearance: none;
+    border-radius: 40px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 10px 10px 0;
+    padding: 10px 17px 9px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+
+    .btnDisconnect:hover {
+        background-color: #e61414;
+        color: white;
+    }
+
+.right_aside {
+    margin-top: 80px;
+    margin-left: 150px;
+}
+
+.change_info {
+    max-width: 315px;
+}
+
+.title_menu {
+    color: white;
+    text-align: center;
+}
+
+.hc {
+    display: flex;
+    backdrop-filter: blur(30px) saturate(100%);
+    width: 605px;
+    height: 235px;
+}
+
+.hc_menu {
+    color: white;
+    width: 880px;
+}
+
+.img_game {
+    width: 270px;
+    border-radius: 30px;
+    margin-left: 20px;
+}
+
+.contenu_game {
+    display: inline-block;
+    position: absolute;
+}
+
+.contenu2_game {
+    margin-top: 50px;
+}
+
+.separate_content {
+    margin: 1rem 0;
+    color: white;
+    opacity: 2;
+    width: 250px;
+}
+
+.statut_command {
+    margin-left: 550px;
+}
+
+.mi {
+    display: flex;
+    backdrop-filter: blur(30px) saturate(100%);
+    width: 100%;
+    height: 240px;
+    align-items: center;
+    justify-content: center;
+}
+
+.mi_left {
+    color: white;
+    width: 500px;
+    display: inline-block;
+}
+
+.mi_right {
+    float: right;
+    color: white;
+}
+
+.btn_validate {
+    justify-content: center;
+    display: flex;
+}
+
+.mi_password {
+    backdrop-filter: blur(30px) saturate(100%);
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+.actual_password {
+    justify-content: center;
+    display: flex;
+}
+
+.new_password {
+    justify-content: center;
+    display: flex;
+}
+
+.confirm_actual_password {
+    justify-content: center;
+    display: flex;
+}
+
+.btnValidate {
+    border: 2px solid #e61414;
+    border-color: #e61414;
+    color: #e61414;
+    -webkit-font-smoothing: antialiased;
+    -webkit-appearance: none;
+    border-radius: 40px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 10px 10px 0;
+    padding: 10px 17px 9px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+
+    .btnValidate:hover {
+        background-color: #e61414;
+        color: white;
+    }
+
+.btnChangePassword {
+    border: 2px solid #e61414;
+    border-color: #e61414;
+    color: #e61414;
+    -webkit-font-smoothing: antialiased;
+    -webkit-appearance: none;
+    border-radius: 40px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 10px 10px 0;
+    padding: 10px 17px 9px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+
+    .btnChangePassword:hover {
+        background-color: #e61414;
+        color: white;
+    }
+
+.grid {
+    display: grid;
+    gap: 35px;
+    grid-template-columns: repeat(4, 1fr);
+}

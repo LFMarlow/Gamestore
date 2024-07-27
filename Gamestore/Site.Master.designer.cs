@@ -15,13 +15,22 @@ namespace Gamestore
     {
 
         /// <summary>
-        /// Contrôle BtnDeconnexion.
+        /// Contrôle link_compte.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnDeconnexion;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor link_compte;
+
+        /// <summary>
+        /// Contrôle ImgCart.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ImgCart;
 
         /// <summary>
         /// Contrôle MainContent.

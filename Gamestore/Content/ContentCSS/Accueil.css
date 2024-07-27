@@ -1,4 +1,4 @@
-﻿.title_default {
+.title_default {
     position: relative;
     top: 0.1em;
     margin-top: 100px;
@@ -19,6 +19,12 @@
 
 .slick-prev:before, .slick-next:before {
     color: red;
+}
+
+.separate {
+    margin: 1rem 0;
+    color: white;
+    opacity: 2;
 }
 
 .img_slide {

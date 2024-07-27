@@ -2,6 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <link href="/Content/ContentCSS/Accueil.css" type="text/css" rel="stylesheet" />
+    <link href="/Content/ContentCSS/Accueil.css" rel="stylesheet" />
 
     <main class="main_content">
         <!-- PRESENTATION GAMESTORE -->
@@ -48,4 +49,5 @@
     <br />
     <br />
     </main>
+<hr class="separate" />
 </asp:Content>

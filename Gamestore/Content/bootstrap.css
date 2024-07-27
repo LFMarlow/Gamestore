@@ -5830,6 +5830,7 @@ textarea.form-control-lg {
 
 .carousel-inner {
   position: relative;
+  width: 50%;
   overflow: hidden;
   margin: auto;
 }

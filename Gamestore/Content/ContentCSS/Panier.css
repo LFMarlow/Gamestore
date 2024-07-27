@@ -1,0 +1,68 @@
+﻿.title_cart {
+    color: white;
+    text-align: center;
+}
+
+.content_cart {
+    color: white;
+    backdrop-filter: blur(30px) saturate(100%);
+    width: 80%;
+}
+
+.img_game {
+    width: 300px;
+}
+
+.contenu_game {
+    display: inline-block;
+    position: absolute;
+}
+
+.contenu2_game {
+    margin-top: 50px;
+    margin-left: 235px;
+}
+
+.PnlCart {
+    margin: 0;
+    padding: 0;
+    width: 800px;
+    display: inline-block;
+}
+
+.PnlSubmitCart {
+    color: white;
+    float: right;
+    margin-top: -250px;
+    margin-left: 850px;
+}
+
+.btn {
+    background: #fc4a1a;
+    background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);
+    background: linear-gradient(to right, #f7b733, #fc4a1a);
+    color: #fff;
+    border: 3px solid #eee;
+}
+
+.LblEmpty {
+    color: white;
+    margin-left: 540px;
+}
+
+.BtnSuppr {
+    background: #fc4a1a;
+    background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);
+    background: linear-gradient(to right, #f7b733, #fc4a1a);
+    color: #fff;
+    border: 3px solid #eee;
+    margin-left: -200px;
+}
+
+.LblPrice {
+    display: block;
+}
+
+#calendarContainer {
+    color: white;
+}

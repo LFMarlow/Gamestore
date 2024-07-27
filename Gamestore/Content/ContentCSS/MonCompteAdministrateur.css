@@ -14,8 +14,6 @@
     width: 15%;
 }
 
-
-
 .hello {
     margin-bottom: 3px;
     overflow: hidden;
@@ -140,4 +138,23 @@
 .img_game {
     width: 400px;
     border-radius: 30px;
+}
+
+.contenu_game {
+    display: inline-block;
+    position: absolute;
+}
+
+.contenu2_game {
+    margin-top: 50px;
+}
+
+.separate {
+    margin: 1rem 0;
+    color: white;
+    opacity: 2;
+}
+
+.contenu3_game {
+    margin-top: -9px;
 }

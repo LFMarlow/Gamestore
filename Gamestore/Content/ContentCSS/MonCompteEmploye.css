@@ -1,4 +1,4 @@
-﻿.main_account {
+﻿main_account {
     margin-bottom: 3px;
     padding: 20px 13px;
     position: relative;
@@ -13,8 +13,6 @@
 .left_aside {
     width: 15%;
 }
-
-
 
 .hello {
     margin-bottom: 3px;
@@ -46,6 +44,7 @@
     -webkit-transition: all .2s;
     transition: all .2s;
 }
+
     .btnDisconnect:hover {
         background-color: #e61414;
         color: white;
@@ -61,83 +60,44 @@
     text-align: center;
 }
 
-.cvg {
+.hc {
     display: flex;
-    justify-content: center;
     backdrop-filter: blur(30px) saturate(100%);
+    width: 900px;
+    height: 235px;
 }
 
-.cvg_menu {
+.hc_menu {
     color: white;
-    width: 78%;
-
-}
-
-.info_container {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.cvg_first_section {
-    display: flex;
-    align-items: baseline;
-}
-
-.title_game {
-    margin-left: 50px;
-}
-
-.price_game {
-    margin-left: 50px;
-}
-
-.qte_game {
-    margin-left: 50px;
-}
-
-.info_container_second {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.cvg_second_section {
-    display: flex;
-    align-items: baseline;
-}
-
-.genre_game {
-    margin-left: 50px;
-}
-
-.TxtBoxDescription {
-    width: 600px;
-    height: 150px
-}
-
-.description_cvg {
-    display: grid;
-    justify-content: center;
-}
-
-.div_btn {
-    display: flex;
-    justify-content: center;
-}
-
-.info_container_ce {
-    display: grid;
-    justify-content: center;
-}
-
-.ce_first_section {
-    display: grid;
+    width: 880px;
 }
 
 .img_game {
-    width: 400px;
+    width: 270px;
     border-radius: 30px;
+    margin-left: 20px;
+}
+
+.contenu_game {
+    display: inline-block;
+    position: absolute;
+}
+
+.contenu2_game {
+    margin-top: 50px;
+}
+
+.separate_content {
+    margin: 1rem 0;
+    color: white;
+    opacity: 2;
+    width: 250px;
+}
+
+.statut_command {
+    margin-left: 550px;
+}
+
+.graph_vente {
+    background-color: white;
 }

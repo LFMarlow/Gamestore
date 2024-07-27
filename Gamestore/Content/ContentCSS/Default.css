@@ -1,5 +1,8 @@
 ﻿body {
     background-image: url(../ContentIMG/fond_2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll, local;
+    background-size: cover;
 }
 
 footer {
@@ -76,4 +79,9 @@ footer {
 .BtnDeco {
     border-radius: 20px;
     background-color: #ea7068;
+}
+
+.photo_cart {
+    height: 3em;
+    margin-left: 50px;
 }

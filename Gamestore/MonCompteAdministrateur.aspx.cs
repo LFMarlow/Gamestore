@@ -330,6 +330,7 @@ namespace Gamestore
             PnlReadSale.Visible = false;
             PnlSaleByGenre.Visible = false;
             PnlSaleByItem.Visible = false;
+            BtnDetailsChart.Visible = false;
             contenue_game.Visible = false;
             ImgGamePromo.Visible = false;
 
@@ -362,6 +363,7 @@ namespace Gamestore
             PnlReadSale.Visible = false;
             PnlSaleByGenre.Visible = false;
             PnlSaleByItem.Visible = false;
+            BtnDetailsChart.Visible = false;
             contenu_game.Visible = false;
             ImgSupprPromo.Visible = false;
 

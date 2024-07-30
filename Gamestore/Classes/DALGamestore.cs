@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Web;
-using System.Windows.Forms;
-using MongoDB.Driver;
 using MySql.Data.MySqlClient;
 
 namespace Gamestore.Classes
@@ -1167,12 +1161,12 @@ namespace Gamestore.Classes
             return listJeuxVideo;
         }
 
-        public List<float> RecupDiscountPromotedJeuxVideo()
+        public List<int> RecupDiscountPromotedJeuxVideo()
         {
             string requete = "SELECT discount FROM jeux_video WHERE discount IS NOT NULL ORDER BY discount DESC LIMIT 10";
 
             bool isConnected = false;
-            List<float> listJeuxVideo = new List<float>();
+            List<int> listJeuxVideo = new List<int>();
 
             try
             {
@@ -1185,7 +1179,7 @@ namespace Gamestore.Classes
                     {
                         do
                         {
-                            listJeuxVideo.Add(Convert.ToSingle(reader["discount"]));
+                            listJeuxVideo.Add(Convert.ToInt32(reader["discount"]));
 
                         } while (reader.Read());
                     }
@@ -1868,7 +1862,7 @@ namespace Gamestore.Classes
 
         public Dictionary<string, Dictionary<string, int>> GetSalesByGenre()
         {
-            string requete = "SELECT genre, date_retrait, COUNT(*) as nombre_ventes FROM command WHERE statut_commande = 'Livré' GROUP BY genre";
+            string requete = "SELECT date_retrait, genre, COUNT(*) as nombre_ventes FROM command WHERE statut_commande = 'Livré' GROUP BY date_retrait, genre ORDER BY date_retrait, genre";
 
             Dictionary<string, Dictionary<string, int>> salesData = new Dictionary<string, Dictionary<string, int>>();
             bool isConnected = false;

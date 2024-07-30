@@ -63,7 +63,8 @@ footer {
 }
 
 .navbar {
-    background-color: #ea7068;
+    background-color: transparent;
+    backdrop-filter: blur(60px) saturate(100%);
 }
 
 .separate {

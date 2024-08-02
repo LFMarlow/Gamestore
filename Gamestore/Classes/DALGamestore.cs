@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.SqlClient;
+using System.Threading.Tasks;
+using System.Web.Caching;
+using System.Web;
 using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 
 namespace Gamestore.Classes
 {
@@ -788,6 +793,55 @@ namespace Gamestore.Classes
 
         }
 
+        public async Task<List<JeuxVideo>> RecupAllJeuxVideoAsync()
+        {
+
+            var cacheKey = "AllGamesCache";
+            var cachedData = HttpContext.Current.Cache[cacheKey] as List<JeuxVideo>;
+
+            if (cachedData != null)
+            {
+                return cachedData;
+            }
+
+            // Récupération des données de la base de données
+            List<JeuxVideo> games = new List<JeuxVideo>();
+            string requete = "SELECT title, description, pegi, genre, quantity, image, price, discount, price_discount FROM jeux_video";
+
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                await connection.OpenAsync();
+
+                using (var command = new MySqlCommand(requete, connection))
+                {
+                    using (var reader = await command.ExecuteReaderAsync())
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            var game = new JeuxVideo
+                            {
+                                title = reader["title"].ToString(),
+                                description = reader["description"].ToString(),
+                                pegi = int.Parse(reader["pegi"].ToString()),
+                                genre = reader["genre"].ToString(),
+                                quantite = int.Parse(reader["quantity"].ToString()),
+                                urlImage = reader["image"].ToString(),
+                                prix = float.Parse(reader["price"].ToString()),
+                                discount = reader["discount"] != DBNull.Value ? Convert.ToInt32(reader["discount"]) : 0, // Gestion des valeurs nulles
+                                price_discount = reader["price_discount"] != DBNull.Value ? Convert.ToDecimal(reader["price_discount"]) : (decimal?)null
+                            };
+                            games.Add(game);
+                        }
+                    }
+                }
+            }
+
+            HttpContext.Current.Cache.Insert(cacheKey, games, null, DateTime.Now.AddMinutes(30), Cache.NoSlidingExpiration);
+
+            Deconnecter();
+            return games;
+        }
+
         public List<String> RecupImageJeuxVideo()
         {
             string requete = "SELECT image FROM jeux_video ORDER BY id";
@@ -1198,7 +1252,7 @@ namespace Gamestore.Classes
 
         public List<float> RécupPriceInCart(int prmIdClient)
         {
-            string requete = "SELECT DISTINCT jeux_video.price FROM jeux_video, panier WHERE panier.id_game = jeux_video.id_game AND panier.id_client = '" + prmIdClient + "'" + " ORDER BY panier.id";
+            string requete = "SELECT DISTINCT jeux_video.price, panier.id FROM jeux_video, panier WHERE panier.id_game = jeux_video.id_game AND panier.id_client = '" + prmIdClient + "'" + " ORDER BY panier.id";
 
             bool isConnected = false;
             List<float> listPriceJeuxVideo = new List<float>();

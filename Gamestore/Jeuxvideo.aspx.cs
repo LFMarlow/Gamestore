@@ -16,25 +16,46 @@ namespace Gamestore
     public partial class About : Page
     {
         DALGamestore objDal = new DALGamestore();
-        protected void Page_Load(object sender, EventArgs e)
+
+        protected async void Page_Load(object sender, EventArgs e)
         {
-            List<String> listImageJV = new List<String>();
-            List<String> listTitleJV = new List<String>();
-            List<String> listGenreJV = new List<String>();
-            List<float> listPriceJV = new List<float>();
-            List<int> listPegiJV = new List<int>();
+            if (!IsPostBack)
+            {
+                var games = await objDal.RecupAllJeuxVideoAsync();
+                DisplayGames(games);
+            }
 
-            int i = 0;
-            int stocksGame = 0;
-            int listDiscountJV = 0;
-            float priceDiscountJV = 0;
+            if (Convert.ToBoolean(Session["EstConnecte"]))
+            {
+                if (Session["RoleUtilisateur"].ToString() == "Utilisateur")
+                {
+                    Image Img_Cart = Master.FindControl("ImgCart") as Image;
 
+                    //Récupération de l'email de l'utilisateur pour avoir l'ID Client
+                    String emailUsers = Convert.ToString(Session["MailUtilisateur"]);
+                    int idClient = objDal.RecupClientID(emailUsers);
 
-            //Récupération de toutes les informations de chaque jeux vidéo présent dans la BDD
-            listImageJV = objDal.RecupImageJeuxVideo();
-            listTitleJV = objDal.RecupTitreJeuxVideo();
-            listPriceJV = objDal.RecupPriceJeuxVideo();
-            listPegiJV = objDal.RecupPegiJeuxVideo();
+                    //Récupération du contenu du panier avec l'idClient
+                    List<String> listCart = new List<String>();
+                    listCart = objDal.RécupCart(idClient);
+
+                    //Si le panier est vide, le symbole ne s'affiche pas, sinon oui
+                    if (listCart.Count <= 0)
+                    {
+                        Img_Cart.Visible = false;
+                    }
+                    else
+                    {
+                        Img_Cart.Visible = true;
+                    }
+                }
+            }
+        }
+
+        //Affichage de tout les jeux + Filtre
+        private void DisplayGames(List<JeuxVideo> games)
+        {
+            List<String> listGenreJV = new List<string>();
             listGenreJV = objDal.RecupGenreJeuxVideo();
 
             for (int j = 0; j < listGenreJV.Count; j++)
@@ -53,244 +74,115 @@ namespace Gamestore
                     if (existeDeja == false)
                     {
                         CheckBoxGenre.Items.Add(s);
-                        
+
                     }
                 }
             }
-            
-            //Initialisation + affichage dnynamique des jeux videos
-            StringBuilder sb1 = new StringBuilder();
-            StringBuilder sb2 = new StringBuilder();
-            StringBuilder sb3 = new StringBuilder();
-            StringBuilder sb4 = new StringBuilder();
-            StringBuilder sb5 = new StringBuilder();
-            StringBuilder sb6 = new StringBuilder();
-            StringBuilder sb7 = new StringBuilder();
-            StringBuilder sbgDiscount = new StringBuilder();
-            StringBuilder sbgPEGI = new StringBuilder();
-            StringBuilder sbgImgPegi = new StringBuilder();
 
-            sb1.Append(@"<div class='grid'>");
-            sb2.Append(@"<div class = 'info_game'>");
-            sbgDiscount.Append(@"<div class= 'discount'>");
-            sbgPEGI.Append(@"<div class='PEGI'>");
-            
-            sb3.Append(@"<br/>");
-            sb4.Append(@"</div>");
-            sb5.Append(@"</div>");
-            sb6.Append(@"</div>");
-            
+            StringBuilder sb = new StringBuilder();
 
+            sb.Append(@"<div class='grid'>");
 
-            //Affichage dynamique de tout les jeux vidéos présent dans BDD
-            PnlGame.Controls.Add(new LiteralControl(sb1.ToString()));
-
-            foreach (var url in listImageJV)
+            foreach (var game in games)
             {
-                if (url != "")
+                if (game.price_discount.HasValue && game.price_discount.Value > 0)
                 {
-                    ImageButton ImgBtn = new ImageButton();
-                    Label LblTitle = new Label();
-                    Label LblPrice = new Label();
-                    Label LblDiscount = new Label();
-                    Label LblPriceDiscount = new Label();
-                    Label LblPegi = new Label();
-                    Label LblNoStocks = new Label();
-                    Button BtnAddToCart = new Button();
+                    //Ajouter la classe de genre + le prix pour filtre dynamiquement
+                    sb.AppendFormat(@"<div id='info {0}' class='genreGame' data-price='" + game.price_discount + "'>", game.genre);
+                }
+                else
+                {
+                    //Ajouter la classe de genre + le prix pour filtre dynamiquement
+                    sb.AppendFormat(@"<div id='info {0}' class='genreGame' data-price='" + game.prix + "'>", game.genre);
+                }
 
-                    //Boolean pour savoir si il y a une réduction ou non sur le jeu en cours
-                    bool discountExist = false;
-                    bool priceDiscountExist = false;
+                // Lien de redirection
+                string detailUrl = $"/DetailJeuxVideo?{game.title.Replace(" ", "_")}";
 
-                    //Vérification du stock du jeu
-                    stocksGame = objDal.VerifStocksGame(listTitleJV[i]);
+                // Image du jeu avec lien
+                sb.AppendFormat(@"<a href='{0}'>", detailUrl);
+                sb.AppendFormat(@"<img src='{0}' class='img_game' />", game.urlImage);
+                sb.AppendFormat(@"</a>");
 
-                    //Récupération d'une potentiel remise existante
-                    listDiscountJV = objDal.RecupDiscountJeuxVideo(listTitleJV[i]);
+                if (game.discount > 0)
+                {
+                    sb.AppendFormat(@"<div class='discount'>-{0}%</div>", game.discount);
+                }
 
-                    //Récupération d'un prix réduit si existant
-                    priceDiscountJV = objDal.RecupPriceDiscountJeuxVideo(listTitleJV[i]);
+                // PEGI
+                sb.Append(@"<div class='PEGI'>");
+                string pegiImg = objDal.RecupPegi("pegi_" + game.pegi);
+                sb.AppendFormat("<img class='img_pegi' src='{0}' />", pegiImg);
+                sb.Append(@"</div>");
 
-                    LblTitle.ID = "LblTitleGame" + i.ToString();
-                    LblTitle.Text = listTitleJV[i];
-                    LblTitle.Visible = true;
-                    LblTitle.CssClass = "title_game";
+                //InfoGame
+                sb.Append(@"<div class = 'info_game'>");
 
-                    ImgBtn.ID = "ImgBtn" + i.ToString();
-                    ImgBtn.ImageUrl = url;
-                    ImgBtn.CssClass = "img_game";
-                    ImgBtn.Click += (source, args) =>
-                    {
-                        Response.Redirect("~/DetailJeuxVideo?" + LblTitle.Text.Replace(" ", "_"));
-                    };
+                // Titre du jeu
+                sb.AppendFormat(@"<div class='title_game'>{0}</div>", game.title);
 
-                    if (priceDiscountJV <= 0)
-                    {
-                        LblPrice.ID = "LblPriceGame" + i.ToString();
-                        LblPrice.Text = listPriceJV[i] + "€";
-                        LblPrice.Visible = true;
-                        LblPrice.CssClass = "price_game";
-                    }
+                // Prix ou Prix réduit
+                if (game.price_discount.HasValue && game.price_discount.Value > 0)
+                {
+                    sb.AppendFormat(@"<div class='price_game'>{0}€</div>", game.price_discount.Value);
+                }
+                else
+                {
+                    sb.AppendFormat(@"<div class='price_game'>{0}€</div>", game.prix);
+                }
 
-                    if (listDiscountJV > 0)
-                    {
-                        LblDiscount.ID = "LblDiscount" + i.ToString();
-                        LblDiscount.Text = "-" + listDiscountJV + "%";
-                        LblDiscount.Visible = true;
-                        LblDiscount.CssClass = "discount_game";
-
-                        discountExist = true;
-                    }
-
-                    if (priceDiscountJV > 0)
-                    {
-                        LblPriceDiscount.ID = "LblPriceDiscount" + i.ToString();
-                        LblPriceDiscount.Text = priceDiscountJV + "€";
-                        LblPriceDiscount.Visible = true;
-                        LblPriceDiscount.CssClass = "price_game";
-
-                        priceDiscountExist = true;
-                    }
-                    
-
-                    LblPegi.ID = "LblPegi" + i.ToString();
-                    LblPegi.Text = "pegi_" + " " + listPegiJV[i];
-                    LblPegi.Visible = false;
-                    LblPegi.CssClass = "pegi_game";
-
-                    if (stocksGame <= 0)
-                    {
-                        LblNoStocks.ID = "LblNoStocks" + i.ToString();
-                        LblNoStocks.Text = "En rupture de stock";
-                        LblNoStocks.Visible = false;
-                        LblNoStocks.CssClass = "no_stock_game";
-                    }
-
-                    
-
-                    String emailClient = null;
-                    if (Convert.ToBoolean(Session["EstConnecte"]) == true)
-                    {
-                        //Variable pour pouvoir vérifier si le jeu est déjà dans le panier ou non
-                        emailClient = Session["MailUtilisateur"].ToString();
-                    }
-
-                    String titreGame = LblTitle.Text;
-                    int idUsers = objDal.RecupClientID(emailClient);
-
-                    //Vérification si déjà dans le panier
-                    String verifDoublon = objDal.VerifDoublonInCart(titreGame, idUsers);
-
+                sb.Append(@"</div>");
+                // Stock
+                if (game.quantite <= 0)
+                {
+                    sb.Append(@"<div class='no_stock_game'>En rupture de stock</div>");
+                }
+                else
+                {
                     if (Convert.ToBoolean(Session["EstConnecte"]) == true && Session["RoleUtilisateur"].ToString() == "Utilisateur")
                     {
-                        if (verifDoublon != titreGame)
-                        {
-                            BtnAddToCart.ID = "BtnAddToCart" + i.ToString();
-                            BtnAddToCart.Text = "Ajouter au panier";
-                            BtnAddToCart.Visible = true;
-                            BtnAddToCart.CssClass = "BtnAddToCart";
-                            BtnAddToCart.Click += (source, args) =>
-                            {
-                                //Variable pour Récupération de l'email de l'utilisateur pour avoir son ID
-                                String emailUsers = Session["MailUtilisateur"].ToString();
-
-                                //Variable pour Récupération du titre du jeux auquels le bouton est attaché
-                                String titleGame = LblTitle.Text;
-
-                                //Variable pour Récupération de l'id du jeu auquels le bouton est attaché
-                                int recupGameId = -1;
-
-                                //Récupération de l'ID du client grâce à son adresse mail
-                                int idClient = objDal.RecupClientID(emailUsers);
-
-                                //Récupération de l'ID du jeux auquels le bouton est attaché
-                                recupGameId = objDal.RecupGameID(titleGame);
-
-                                //Ajout du jeu au panier
-                                bool estInscrit = objDal.AddToCart(titleGame, idClient, recupGameId);
-
-                                if (estInscrit == true)
-                                {
-                                    Alert.Show("Jeu bien ajouté au panier.");
-                                    BtnAddToCart.Visible = false;
-
-                                    Image Img_Cart = Master.FindControl("ImgCart") as Image;
-                                    if (Img_Cart != null)
-                                    {
-                                        Img_Cart.Visible = true;
-                                    }
-
-                                }
-                                else
-                                {
-                                    Alert.Show("Impossible d'ajouter ce jeu au panier.");
-                                }
-                            };
-                        }
+                        // Ajout d'un bouton avec gestionnaire d'événement
+                        string buttonId = "btnAddToCart_" + game.title.Replace(" ", "_");
+                        sb.AppendFormat(@"<button id='{0}' class='BtnAddToCart' onclick='addToCart(""{1}""); return false;'>Ajouter au panier</button>", buttonId, game.title.Replace("'", "\\'"));
                     }
-
-                    sb7.Clear();
-                    if (priceDiscountJV > 0)
-                    {
-                        sb7.Append(@"<div id = 'info" + " " + listGenreJV[i] + "' class = 'genreGame' data-price='" + priceDiscountJV + "'>");
-                    }
-                    else
-                    {
-                        sb7.Append(@"<div id = 'info" + " " + listGenreJV[i] + "' class = 'genreGame' data-price='" + listPriceJV[i] + "'>");
-                    }
-
-                    
-
-                    String pegiImg = objDal.RecupPegi(LblPegi.Text);
-
-                    sbgImgPegi.Clear();
-                    sbgImgPegi.Append("<img class='img_pegi' src='" + pegiImg + "'/>");
-
-
-                    PnlGame.Controls.Add(new LiteralControl(sb7.ToString()));
-                    PnlGame.Controls.Add(ImgBtn);
-                    PnlGame.Controls.Add(new LiteralControl(sbgPEGI.ToString()));
-                    PnlGame.Controls.Add(new LiteralControl(sbgImgPegi.ToString()));
-                    PnlGame.Controls.Add(new LiteralControl(sb4.ToString()));
-                    if (discountExist == true)
-                    {
-                        PnlGame.Controls.Add(new LiteralControl(sbgDiscount.ToString()));
-                        PnlGame.Controls.Add(LblDiscount);
-                        PnlGame.Controls.Add(new LiteralControl(sb4.ToString()));
-                    }
-                    PnlGame.Controls.Add(new LiteralControl(sb2.ToString()));
-                    PnlGame.Controls.Add(LblTitle);
-
-                    if (priceDiscountExist == false)
-                    {
-                        PnlGame.Controls.Add(LblPrice);
-                    }
-                    else
-                    {
-                        PnlGame.Controls.Add(LblPriceDiscount);
-                    }
-                    PnlGame.Controls.Add(new LiteralControl(sb3.ToString()));
-                    PnlGame.Controls.Add(LblPegi);
-                    if (Convert.ToBoolean(Session["EstConnecte"]) == true && verifDoublon != titreGame && Session["RoleUtilisateur"].ToString() == "Utilisateur")
-                    {
-                        PnlGame.Controls.Add(BtnAddToCart);
-                    }
-
-                    if (stocksGame <= 0)
-                    {
-                        PnlGame.Controls.Add(LblNoStocks);
-                        LblNoStocks.Visible = true;
-                        BtnAddToCart.Visible = false;
-                    }
-                    PnlGame.Controls.Add(new LiteralControl(sb4.ToString()));
-                    PnlGame.Controls.Add(new LiteralControl(sb5.ToString()));
-                    i++;
                 }
 
+                //Fin de .info_game
+                sb.Append(@"</div>");
             }
 
-            PnlGame.Controls.Add(new LiteralControl(sb6.ToString()));
+            //Fin de .grid
+            sb.Append(@"</div>");
 
+            PnlGame.Controls.Add(new LiteralControl(sb.ToString()));
+        }
+
+        [System.Web.Services.WebMethod]
+        public static String AddToCart(string title)
+
+        {
+            // Vérifier si l'utilisateur est connecté
+            if (HttpContext.Current.Session["EstConnecte"] != null && Convert.ToBoolean(HttpContext.Current.Session["EstConnecte"]))
+            {
+                // Récupérer l'ID de l'utilisateur depuis la session
+                string email = HttpContext.Current.Session["MailUtilisateur"].ToString();
+                DALGamestore objDal = new DALGamestore();
+                int userId = objDal.RecupClientID(email);
+
+                //Récupération de l'ID du jeux auquels le bouton est attaché
+                int recupGameId = objDal.RecupGameID(title);
+
+                // Ajouter le jeu au panier
+                bool result = objDal.AddToCart(title, userId, recupGameId);
+
+                // Retourner un message ou un statut à la requête AJAX
+                return result ? "Jeu ajouté au panier avec succès!" : "Erreur lors de l'ajout au panier.";
+            }
+            else
+            {
+                // Gérer le cas où l'utilisateur n'est pas connecté
+                return "Utilisateur non connecté.";
+            }
         }
     }
 }

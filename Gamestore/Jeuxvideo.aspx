@@ -1,10 +1,11 @@
-﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Jeuxvideo.aspx.cs" Inherits="Gamestore.About" %>
+﻿<%@ Page Async="true" Title="Jeuxvideo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Jeuxvideo.aspx.cs" Inherits="Gamestore.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <link href="/Content/ContentCSS/Jeuxvideo.css" type="text/css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="Scripts/ContentJS/FilterJV.js"></script> 
+    <script type="text/javascript" src="Scripts/ContentJS/AddToCart.js"></script> 
 
     <main aria-labelledby="title">
         <br />

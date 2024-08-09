@@ -294,11 +294,11 @@ namespace Gamestore.Classes
         }
 
         //Inscription des employé par l'administrateur
-        public bool InscriptionEmploye(string prmNom, string prmPrenom, string prmMail, string prmPassword, string prmRolesUsers)
+        public bool InscriptionEmploye(string prmNom, string prmPrenom, string prmMail, string prmPassword, string prmRolesUsers, string prmTokenUsers)
         {
             bool estInscrit = false;
             string usersInscription =
-            "INSERT INTO users (Nom, Prenom, email, password, role_users) VALUES ('" + prmNom + "'," + "'" + prmPrenom + "'," + "'" + prmMail + "'," + "'" + prmPassword + "'," + "'" + prmRolesUsers + "'" + ")";
+            "INSERT INTO users (Nom, Prenom, email, password, role_users) VALUES ('" + prmNom + "'," + "'" + prmPrenom + "'," + "'" + prmMail + "'," + "'" + prmPassword + "'," + "'" + prmRolesUsers + "'" + "'," + "'" + prmTokenUsers + "'" + ")";
 
             bool isConnected = false;
 
@@ -566,6 +566,7 @@ namespace Gamestore.Classes
 
         }
 
+        //0 REFERENCE
         public List<String> RécupJeuxVideoForPromotion()
         {
             string requete = "SELECT DISTINCT title, price, image FROM jeux_video";
@@ -827,7 +828,7 @@ namespace Gamestore.Classes
                                 quantite = int.Parse(reader["quantity"].ToString()),
                                 urlImage = reader["image"].ToString(),
                                 prix = float.Parse(reader["price"].ToString()),
-                                discount = reader["discount"] != DBNull.Value ? Convert.ToInt32(reader["discount"]) : 0, // Gestion des valeurs nulles
+                                discount = reader["discount"] != DBNull.Value ? Convert.ToInt32(reader["discount"]) : 0,
                                 price_discount = reader["price_discount"] != DBNull.Value ? Convert.ToDecimal(reader["price_discount"]) : (decimal?)null
                             };
                             games.Add(game);
@@ -840,155 +841,6 @@ namespace Gamestore.Classes
 
             Deconnecter();
             return games;
-        }
-
-        public List<String> RecupImageJeuxVideo()
-        {
-            string requete = "SELECT image FROM jeux_video ORDER BY id";
-
-            bool isConnected = false;
-            List<String> listJeuxVideo = new List<String>();
-
-            try
-            {
-                isConnected = Connecter();
-                if (isConnected)
-                {
-                    command = new MySqlCommand(requete, connexion);
-                    reader = command.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        do
-                        {
-                            listJeuxVideo.Add(Convert.ToString(reader["image"]));
-
-                        } while (reader.Read());
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                //Erreur de récupération
-                listJeuxVideo = null;
-            }
-            finally
-            {
-                Deconnecter();
-            }
-            return listJeuxVideo;
-
-        }
-
-        //Recupération des prix de chaque jeux video
-        public List<float> RecupPriceJeuxVideo()
-        {
-            string requete = "SELECT price FROM jeux_video ORDER BY id";
-
-            bool isConnected = false;
-            List<float> listPriceJeuxVideo = new List<float>();
-
-            try
-            {
-                isConnected = Connecter();
-                if (isConnected)
-                {
-                    command = new MySqlCommand(requete, connexion);
-                    reader = command.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        do
-                        {
-                            listPriceJeuxVideo.Add(Convert.ToSingle(reader["price"]));
-
-                        } while (reader.Read());
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                //Erreur de récupération
-                listPriceJeuxVideo.Add(-1);
-            }
-            finally
-            {
-                Deconnecter();
-            }
-            return listPriceJeuxVideo;
-
-        }
-
-        //Recupération du PEGI de chaque jeux video
-        public List<int> RecupPegiJeuxVideo()
-        {
-            string requete = "SELECT pegi FROM jeux_video ORDER BY id";
-
-            bool isConnected = false;
-            List<int> listPegiJeuxVideo = new List<int>();
-
-            try
-            {
-                isConnected = Connecter();
-                if (isConnected)
-                {
-                    command = new MySqlCommand(requete, connexion);
-                    reader = command.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        do
-                        {
-                            listPegiJeuxVideo.Add(Convert.ToInt32(reader["pegi"]));
-
-                        } while (reader.Read());
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                //Erreur de récupération
-                listPegiJeuxVideo.Add(-1);
-            }
-            finally
-            {
-                Deconnecter();
-            }
-            return listPegiJeuxVideo;
-
-        }
-
-        public List<String> RecupTitreJeuxVideo()
-        {
-            string requete = "SELECT title FROM jeux_video ORDER BY id";
-
-            bool isConnected = false;
-            List<String> listJeuxVideo = new List<String>();
-
-            try
-            {
-                isConnected = Connecter();
-                if (isConnected)
-                {
-                    command = new MySqlCommand(requete, connexion);
-                    reader = command.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        do
-                        {
-                            listJeuxVideo.Add(Convert.ToString(reader["title"]));
-
-                        } while (reader.Read());
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                //Erreur de récupération
-                listJeuxVideo = null;
-            }
-            finally
-            {
-                Deconnecter();
-            }
-            return listJeuxVideo;
         }
 
         //Recupération de la réduction de chaque jeux video en fonction du titre du jeu
@@ -1327,7 +1179,6 @@ namespace Gamestore.Classes
 
         }
 
-        //Création de jeux vidéo dans la bdd pour vente
         public bool CreateCommand(string prmStatutCommande, string prmTitre, string prmGenre, string prmDateRetrait, string prmNameStore, string prmIdGame, string prmIdClient)
         {
             bool estInscrit = false;
@@ -1416,7 +1267,7 @@ namespace Gamestore.Classes
             return isDelete;
         }
 
-        //Vérification des stocks
+        //Vérification des stocks 0 REFERENCE
         public int VerifStocksGame(String prmTitreJeux)
         {
             String requete = "SELECT quantity FROM jeux_video WHERE title = '" + prmTitreJeux + "'";
@@ -1877,6 +1728,7 @@ namespace Gamestore.Classes
             return emailClient;
         }
 
+        //0 REFERENCE
         public List<String> RecupGenreCommand()
         {
             string requete = "SELECT genre FROM command WHERE statut_commande = 'Livré'";
@@ -2011,6 +1863,42 @@ namespace Gamestore.Classes
             }
 
             return genreJV;
+        }
+
+        public List<string> RecupTitleInCart(int prmUserId)
+        {
+            string requete = "SELECT titre_jeux FROM panier WHERE id_client = '" + prmUserId + "'";
+
+            bool isConnected = false;
+            List<string> titleGames = new List<string>();
+
+            try
+            {
+                isConnected = Connecter();
+                if (isConnected)
+                {
+                    command = new MySqlCommand(requete, connexion);
+                    reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        do
+                        {
+                            titleGames.Add(reader["titre_jeux"].ToString());
+
+                        } while (reader.Read());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //Erreur de récupération
+                titleGames = null;
+            }
+            finally
+            {
+                Deconnecter();
+            }
+            return titleGames;
         }
     }
 }

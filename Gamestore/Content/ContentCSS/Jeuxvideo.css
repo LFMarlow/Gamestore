@@ -11,7 +11,7 @@
     display: grid;
     gap: 35px;
     grid-template-columns: repeat(4, 1fr);
-    margin-top: -315px;
+    margin-top: -405px;
 }
 
 .img_game {

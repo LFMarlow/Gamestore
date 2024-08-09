@@ -98,10 +98,6 @@
     width: 250px;
 }
 
-.statut_command {
-    margin-left: 550px;
-}
-
 .mi {
     display: flex;
     backdrop-filter: blur(30px) saturate(100%);

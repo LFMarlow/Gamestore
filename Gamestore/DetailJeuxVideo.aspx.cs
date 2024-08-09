@@ -106,9 +106,6 @@ namespace Gamestore
                             i++;
                         }
 
-                        //On supprime la dernière ligne qui ne contient aucun caractère (Split au .)
-                        //BulletListDescription.Items.RemoveAt(i - 1);
-
                         if (bi_cross.Visible == true)
                         {
                             BtnAddCart.Visible = false;

@@ -232,7 +232,7 @@
                                     <br />
                                     <div class="contenu3_game">
                                         <asp:Label ID="Label11" runat="server" Text="Veuillez entrer la remise à appliqué :"></asp:Label>
-                                        <asp:TextBox ID="TxtBoxRemise" AutoPostBack="true" runat="server" placeholder="Entrez la remise à appliquer" TextMode="Number"></asp:TextBox>
+                                        <asp:TextBox ID="TxtBoxRemise" runat="server" placeholder="Entrez la remise à appliquer" TextMode="Number"></asp:TextBox>
                                         &nbsp;
                                         <asp:Button ID="BtnCalculPromotions" runat="server" Text="Valider" OnClick="BtnCalculPromotions_Click" />
                                     </div>

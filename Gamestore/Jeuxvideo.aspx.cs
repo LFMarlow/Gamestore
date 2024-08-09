@@ -10,6 +10,7 @@ using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Gamestore
 {
@@ -57,6 +58,14 @@ namespace Gamestore
         {
             List<String> listGenreJV = new List<string>();
             listGenreJV = objDal.RecupGenreJeuxVideo();
+            string email = "";
+            if (Convert.ToBoolean(Session["EstConnecte"]))
+            {
+                email = Session["MailUtilisateur"].ToString();
+            }
+
+            int userId = objDal.RecupClientID(email);
+            List<string> gamesInCart = objDal.RecupTitleInCart(userId);
 
             for (int j = 0; j < listGenreJV.Count; j++)
             {
@@ -96,10 +105,10 @@ namespace Gamestore
                     sb.AppendFormat(@"<div id='info {0}' class='genreGame' data-price='" + game.prix + "'>", game.genre);
                 }
 
-                // Lien de redirection
+                //Lien de redirection
                 string detailUrl = $"/DetailJeuxVideo?{game.title.Replace(" ", "_")}";
 
-                // Image du jeu avec lien
+                //Image du jeu avec lien
                 sb.AppendFormat(@"<a href='{0}'>", detailUrl);
                 sb.AppendFormat(@"<img src='{0}' class='img_game' />", game.urlImage);
                 sb.AppendFormat(@"</a>");
@@ -109,7 +118,7 @@ namespace Gamestore
                     sb.AppendFormat(@"<div class='discount'>-{0}%</div>", game.discount);
                 }
 
-                // PEGI
+                //PEGI
                 sb.Append(@"<div class='PEGI'>");
                 string pegiImg = objDal.RecupPegi("pegi_" + game.pegi);
                 sb.AppendFormat("<img class='img_pegi' src='{0}' />", pegiImg);
@@ -118,10 +127,10 @@ namespace Gamestore
                 //InfoGame
                 sb.Append(@"<div class = 'info_game'>");
 
-                // Titre du jeu
+                //Titre du jeu
                 sb.AppendFormat(@"<div class='title_game'>{0}</div>", game.title);
 
-                // Prix ou Prix réduit
+                //Prix ou Prix réduit
                 if (game.price_discount.HasValue && game.price_discount.Value > 0)
                 {
                     sb.AppendFormat(@"<div class='price_game'>{0}€</div>", game.price_discount.Value);
@@ -132,7 +141,7 @@ namespace Gamestore
                 }
 
                 sb.Append(@"</div>");
-                // Stock
+                //Stock
                 if (game.quantite <= 0)
                 {
                     sb.Append(@"<div class='no_stock_game'>En rupture de stock</div>");
@@ -141,9 +150,10 @@ namespace Gamestore
                 {
                     if (Convert.ToBoolean(Session["EstConnecte"]) == true && Session["RoleUtilisateur"].ToString() == "Utilisateur")
                     {
-                        // Ajout d'un bouton avec gestionnaire d'événement
+                        //Ajout d'un bouton avec gestionnaire d'événement
                         string buttonId = "btnAddToCart_" + game.title.Replace(" ", "_");
-                        sb.AppendFormat(@"<button id='{0}' class='BtnAddToCart' onclick='addToCart(""{1}""); return false;'>Ajouter au panier</button>", buttonId, game.title.Replace("'", "\\'"));
+                        bool isInCart = gamesInCart.Contains(game.title);
+                        sb.AppendFormat(@"<button id='{0}' class='BtnAddToCart' onclick='addToCart(""{1}""); return false;' {2}>Ajouter au panier</button>", buttonId, game.title.Replace("'", "\\'"), isInCart ? "style='display:none;'" : "");
                     }
                 }
 
@@ -164,7 +174,7 @@ namespace Gamestore
             // Vérifier si l'utilisateur est connecté
             if (HttpContext.Current.Session["EstConnecte"] != null && Convert.ToBoolean(HttpContext.Current.Session["EstConnecte"]))
             {
-                // Récupérer l'ID de l'utilisateur depuis la session
+                //Récupérer l'ID de l'utilisateur depuis la session
                 string email = HttpContext.Current.Session["MailUtilisateur"].ToString();
                 DALGamestore objDal = new DALGamestore();
                 int userId = objDal.RecupClientID(email);
@@ -172,15 +182,15 @@ namespace Gamestore
                 //Récupération de l'ID du jeux auquels le bouton est attaché
                 int recupGameId = objDal.RecupGameID(title);
 
-                // Ajouter le jeu au panier
+                //Ajouter le jeu au panier
                 bool result = objDal.AddToCart(title, userId, recupGameId);
 
-                // Retourner un message ou un statut à la requête AJAX
+                //Retourner un message ou un statut à la requête AJAX
                 return result ? "Jeu ajouté au panier avec succès!" : "Erreur lors de l'ajout au panier.";
             }
             else
             {
-                // Gérer le cas où l'utilisateur n'est pas connecté
+                //Gérer le cas où l'utilisateur n'est pas connecté
                 return "Utilisateur non connecté.";
             }
         }

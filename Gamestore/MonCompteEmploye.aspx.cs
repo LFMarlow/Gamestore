@@ -22,6 +22,7 @@ namespace Gamestore
             {
                 //Variable pour récupéré la date du jour
                 String dateRetraitFinal;
+
                 //Variable pour récupéré le prix du jeu
                 String substringLblPrice = "";
 
@@ -100,6 +101,10 @@ namespace Gamestore
                                         {
                                             substringLblPrice = LblPrice.Text.Substring(7, 5);
                                         }
+                                        else
+                                        {
+                                            substringLblPrice = listCommand[i].ToString();
+                                        }
                                         
 
                                         i = i + 2;
@@ -174,7 +179,18 @@ namespace Gamestore
                                                 }
                                                 else
                                                 {
+                                                    String priceGame = substringLblPrice;
+                                                    // Pour insérer un document
+                                                    var document = new BsonDocument
+                                                    {
+                                                        { "name", titleGame },
+                                                        { "price", priceGame },
+                                                        { "date", retraitCommand }
+                                                    };
 
+                                                    collection.InsertOne(document);
+                                                    Alert.Show("Commande validé avec succès");
+                                                    MaJCommand();
                                                 }
                                             }
                                             else
@@ -212,12 +228,12 @@ namespace Gamestore
                                                         else
                                                         {
                                                             lastPrice = lastPrice.Substring(0, 5);
-
+                                                            double lastDoublePrice = Convert.ToDouble(lastPrice);
                                                             //Insertion dans DB MongoDB
                                                             var document = new BsonDocument
                                                             {
                                                                 { "name", titleGame },
-                                                                { "price", lastPrice },
+                                                                { "price", lastDoublePrice },
                                                                 { "date", retraitCommand }
                                                             };
 
@@ -229,12 +245,12 @@ namespace Gamestore
                                                     else if (tailleLastPrice == 5)
                                                     {
                                                         lastPrice = lastPrice.Substring(0, 5);
-
+                                                        double lastDoublePrice = Convert.ToDouble(lastPrice);
                                                         //Insertion dans DB MongoDB
                                                         var document = new BsonDocument
                                                             {
                                                                 { "name", titleGame },
-                                                                { "price", lastPrice },
+                                                                { "price", lastDoublePrice },
                                                                 { "date", retraitCommand }
                                                             };
 
@@ -245,12 +261,12 @@ namespace Gamestore
                                                     else if (tailleLastPrice == 2)
                                                     {
                                                         lastPrice = lastPrice.Substring(0, 2);
-
+                                                        double lastDoublePrice = Convert.ToDouble(lastPrice);
                                                         //Insertion dans DB MongoDB
                                                         var document = new BsonDocument
                                                             {
                                                                 { "name", titleGame },
-                                                                { "price", lastPrice },
+                                                                { "price", lastDoublePrice },
                                                                 { "date", retraitCommand }
                                                             };
 
@@ -261,12 +277,12 @@ namespace Gamestore
                                                     else if (tailleLastPrice == 1)
                                                     {
                                                         lastPrice = lastPrice.Substring(0, 1);
-
+                                                        double lastDoublePrice = Convert.ToDouble(lastPrice);
                                                         //Insertion dans DB MongoDB
                                                         var document = new BsonDocument
                                                             {
                                                                 { "name", titleGame },
-                                                                { "price", lastPrice },
+                                                                { "price", lastDoublePrice },
                                                                 { "date", retraitCommand }
                                                             };
 

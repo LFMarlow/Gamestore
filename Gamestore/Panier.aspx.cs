@@ -381,6 +381,8 @@ namespace Gamestore
                 {
                     Img_Cart.Visible = false;
                 }
+
+                Response.Redirect("~/Jeuxvideo");
             }
         }
 
@@ -444,7 +446,6 @@ namespace Gamestore
                         //On récupére le stock du jeu ciblé et on le décrémente d'un
                         int quantityStockGame = objDal.RécupQuantiteJeuxVideo(titleGame);
                         
-
                         if(quantityStockGame > 0)
                         {
                             if (DdlNameStore.SelectedIndex == 0 && LblStoreNearUserReal.Text != "")
@@ -490,7 +491,7 @@ namespace Gamestore
                 {
                     j = stringsInCart.Count + 1;
                     commandInscrit = false;
-                    Alert.Show("Votre Panier ne doit pas être vide et une date de retrait doit être choisi avant de valider le panier.");
+                    Alert.Show("Votre Panier ne doit pas être vide et une date de retrait valide doit être choisi avant de valider le panier.");
                 }
             }
 

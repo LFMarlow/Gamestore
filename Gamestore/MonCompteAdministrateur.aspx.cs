@@ -134,13 +134,14 @@ namespace Gamestore
             String password = TxtBoxPasswordEmploye.Text;
             String passwordHash = "";
             String role = "Employé";
+            String tokenEmploye = TokenUsers.GetRandom(10);
             bool estInscrit;
 
             passwordHash = SecurePassword.Hash(password);
 
             if (TxtBoxNomEmploye.Text != "" && TxtBoxPrenomEmploye.Text != "" && TxtBoxMailEmploye.Text != "" && TxtBoxPasswordEmploye.Text != "")
             {
-                estInscrit = objDal.InscriptionEmploye(nom, prenom, mail, passwordHash, role);
+                estInscrit = objDal.InscriptionEmploye(nom, prenom, mail, passwordHash, role, tokenEmploye);
 
                 if (estInscrit == true)
                 {
@@ -339,12 +340,11 @@ namespace Gamestore
 
             if (listTitle != null)
             {
-                if (DdlGameForPromotions.Items.Count == 0)
-                {
-                    DdlGameForPromotions.DataSource = listTitle;
-                    DdlGameForPromotions.DataBind();
-                    DdlGameForPromotions.Items.Insert(0, new ListItem("-- Sélectionner un jeu --", ""));
-                }
+                DdlGameForPromotions.ClearSelection();
+                DdlGameForPromotions.DataSource = listTitle;
+                DdlGameForPromotions.DataBind();
+                DdlGameForPromotions.Items.Insert(0, new ListItem("-- Sélectionner un jeu --", ""));
+
             }
 
             DdlGameForPromotions.SelectedIndex = 0;
@@ -409,6 +409,9 @@ namespace Gamestore
             LblActualPrice.Visible = true;
             contenue_game.Visible = true;
             ImgGamePromo.Visible = true;
+            TxtBoxRemise.Text = "";
+            TxtBoxRemise.Visible = true;
+            Label11.Visible = true;
             BtnCalculPromotions.Visible = true;
 
             if (DdlGameForPromotions.SelectedIndex == 0)

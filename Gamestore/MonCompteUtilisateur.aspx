@@ -20,7 +20,7 @@
                 <div class="menu_interact">
                     <asp:Button ID="BtnChangeInfo" runat="server" CssClass="change_info" Text="Modification des informations personnelles" OnClick="BtnChangeInfo_Click" />
                     <asp:Button ID="BtnHistCommandValider" runat="server" CssClass="" Text="Historique des commandes" OnClick="BtnHistCommandValider_Click" />
-                    <asp:Button ID="BtnHistCommandNonLivre" runat="server" CssClass="" Text="Historique des commandes non récupéré" OnClick="BtnHistCommandNonLivre_Click" />
+                    <asp:Button ID="BtnHistCommandNonLivre" runat="server" CssClass="" Text="Commandes non récupéré" OnClick="BtnHistCommandNonLivre_Click" />
                 </div>
             </aside>
         </div>

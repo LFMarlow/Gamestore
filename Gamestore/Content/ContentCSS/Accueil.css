@@ -29,13 +29,13 @@
 
 #carouselSold {
     width: 50%;
-    margin-left: 800px;
+    margin-left: 720px;
 }
 
 #carouselReduction {
     width: 50%;
     margin-top: -510px;
-    margin-left: -120px;
+    margin-left: -50px;
 }
 
 .carousel_inner {

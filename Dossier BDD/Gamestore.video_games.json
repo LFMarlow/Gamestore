@@ -1,0 +1,370 @@
+[{
+  "_id": {
+    "$oid": "6693e9d20295fd6da9c4e49b"
+  },
+  "name": "Wayfinder",
+  "price": 25,
+  "date": {
+    "$date": "2024-07-12T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6693ec6b0295fd6da9c4e49c"
+  },
+  "name": "Wayfinder",
+  "price": 25,
+  "date": {
+    "$date": "2024-07-13T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6694062d684a3b476006eecf"
+  },
+  "name": "SAND LAND",
+  "price": 59.49,
+  "date": {
+    "$date": "2024-07-14T17:08:45.870Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66940fbdaa634c905f53a053"
+  },
+  "name": "Roboquest",
+  "price": 29.99,
+  "date": {
+    "$date": "2024-07-14T17:49:26.431Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669bd2e08f5e6a48c131b5eb"
+  },
+  "name": "Elden Ring",
+  "price": 31.79,
+  "date": {
+    "$date": "2024-07-15T15:08:16.387Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669bd2e28f5e6a48c131b5ec"
+  },
+  "name": "Manor Lords",
+  "price": 24.99,
+  "date": {
+    "$date": "2024-07-15T15:08:18.744Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669bd2e68f5e6a48c131b5ed"
+  },
+  "name": "Age of Empire IV",
+  "price": 29.99,
+  "date": {
+    "$date": "2024-07-15T15:08:22.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669bd2e88f5e6a48c131b5ee"
+  },
+  "name": "Roboquest",
+  "price": 29.99,
+  "date": {
+    "$date": "2024-07-16T15:08:24.223Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669bd2ee8f5e6a48c131b5ef"
+  },
+  "name": "Wayfinder",
+  "price": 29.99,
+  "date": {
+    "$date": "2024-07-16T15:08:30.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669bd2f08f5e6a48c131b5f0"
+  },
+  "name": "The Elder Scrolls Online",
+  "price": 29.99,
+  "date": {
+    "$date": "2024-07-20T15:08:32.303Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669bd2f18f5e6a48c131b5f1"
+  },
+  "name": "SAND LAND",
+  "price": 59.49,
+  "date": {
+    "$date": "2024-07-20T15:08:33.882Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669bd2f88f5e6a48c131b5f2"
+  },
+  "name": "Soulmask",
+  "price": 29.99,
+  "date": {
+    "$date": "2024-07-19T15:08:40.669Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669bd531d63e88b48dfda63c"
+  },
+  "name": "Age of Empire IV",
+  "price": 29.99,
+  "date": {
+    "$date": "2024-07-20T15:18:09.495Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669bd55bd63e88b48dfda63d"
+  },
+  "name": "Wayfinder",
+  "price": 29.99,
+  "date": {
+    "$date": "2024-07-20T15:18:51.281Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669bd560d63e88b48dfda63e"
+  },
+  "name": "Roboquest",
+  "price": 29.99,
+  "date": {
+    "$date": "2024-07-20T15:18:56.133Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669bd562d63e88b48dfda63f"
+  },
+  "name": "Elden Ring",
+  "price": 31.79,
+  "date": {
+    "$date": "2024-07-20T15:18:58.343Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669c14834656742193a95475"
+  },
+  "name": "Wayfinder",
+  "price": 29.99,
+  "date": {
+    "$date": "2024-07-16T15:08:30.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669c14aa4656742193a95476"
+  },
+  "name": "Wayfinder",
+  "price": 25,
+  "date": {
+    "$date": "2024-07-13T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669c14ad4656742193a95477"
+  },
+  "name": "SAND LAND",
+  "price": 59.49,
+  "date": {
+    "$date": "2024-07-14T17:08:45.870Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669c14b04656742193a95478"
+  },
+  "name": "Age of Empire IV",
+  "price": 29.99,
+  "date": {
+    "$date": "2024-07-15T15:08:22.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669c14b34656742193a95479"
+  },
+  "name": "Age of Empire IV",
+  "price": 29.99,
+  "date": {
+    "$date": "2024-07-20T15:18:09.495Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669c14b64656742193a9547a"
+  },
+  "name": "Roboquest",
+  "price": 29.99,
+  "date": {
+    "$date": "2024-07-16T15:08:24.223Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669c14b94656742193a9547b"
+  },
+  "name": "The Elder Scrolls Online",
+  "price": 29.99,
+  "date": {
+    "$date": "2024-07-20T15:08:32.303Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669c14be4656742193a9547c"
+  },
+  "name": "Wayfinder",
+  "price": 25,
+  "date": {
+    "$date": "2024-07-12T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669c14c24656742193a9547d"
+  },
+  "name": "SAND LAND",
+  "price": 59.49,
+  "date": {
+    "$date": "2024-07-14T17:08:45.870Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669c14c44656742193a9547e"
+  },
+  "name": "The Elder Scrolls Online",
+  "price": 29.99,
+  "date": {
+    "$date": "2024-07-20T15:08:32.303Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669c14d74656742193a9547f"
+  },
+  "name": "SAND LAND",
+  "price": 59.49,
+  "date": {
+    "$date": "2024-07-14T17:08:45.870Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669c14da4656742193a95480"
+  },
+  "name": "Roboquest",
+  "price": 29.99,
+  "date": {
+    "$date": "2024-07-14T17:49:26.431Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669c14fc4656742193a95481"
+  },
+  "name": "SAND LAND",
+  "price": 59.49,
+  "date": {
+    "$date": "2024-07-13T17:08:45.870Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669c15074656742193a95482"
+  },
+  "name": "SAND LAND",
+  "price": 59.49,
+  "date": {
+    "$date": "2024-07-13T17:08:45.870Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669c152a4656742193a95484"
+  },
+  "name": "SAND LAND",
+  "price": 59.49,
+  "date": {
+    "$date": "2024-07-12T17:08:45.870Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669c15414656742193a95485"
+  },
+  "name": "Elden Ring",
+  "price": 31.79,
+  "date": {
+    "$date": "2024-07-12T15:18:58.343Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669d2901edbf80507b901681"
+  },
+  "name": "SAND LAND",
+  "price": 59.49,
+  "date": {
+    "$date": "2024-07-21T17:08:45.870Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "669ebff68a0f7c128dc9ad0d"
+  },
+  "name": "Wayfinder",
+  "price": 25,
+  "date": {
+    "$date": "2024-06-12T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66a01236521d83cec28ef49f"
+  },
+  "name": "SAND LAND",
+  "price": 59.49,
+  "date": {
+    "$date": "2024-06-21T17:08:45.870Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66a15e2d1aee415a37464f85"
+  },
+  "name": "Elden Ring",
+  "price": 31.79,
+  "date": {
+    "$date": "2024-08-12T15:18:58.343Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66a3d2178f4f1d5526fb341f"
+  },
+  "name": "Age of Empire IV",
+  "price": 29.99,
+  "date": {
+    "$date": "2024-07-12T15:08:22.401Z"
+  }
+}]

@@ -67,6 +67,7 @@ namespace Gamestore
             }
             return isOkay;
         }
+
         public string RecupPasswordHash(string prmEmail)
         {
             String passwordHash;
@@ -76,7 +77,7 @@ namespace Gamestore
             loginUsers = new Classes.Users();
             loginUsers = objDAL.AuthentificationEmail(prmEmail);
 
-            if (loginUsers.password != null)
+            if (loginUsers != null && loginUsers.password != null)
             {
                 passwordHash = loginUsers.password;
             }

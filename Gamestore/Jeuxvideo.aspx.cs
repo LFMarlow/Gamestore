@@ -56,14 +56,18 @@ namespace Gamestore
         //Affichage de tout les jeux + Filtre
         private void DisplayGames(List<JeuxVideo> games)
         {
+            //Récupération des genres de jeu existant pour le Filtrage
             List<String> listGenreJV = new List<string>();
             listGenreJV = objDal.RecupGenreJeuxVideo();
+
+            //Récupération de l'adresse mail si l'utilisateur est connecté
             string email = "";
             if (Convert.ToBoolean(Session["EstConnecte"]))
             {
                 email = Session["MailUtilisateur"].ToString();
             }
 
+            //Récupération du userID via l'adresse mail
             int userId = objDal.RecupClientID(email);
             List<string> gamesInCart = objDal.RecupTitleInCart(userId);
 
@@ -88,6 +92,7 @@ namespace Gamestore
                 }
             }
 
+            //Affichage des jeux
             StringBuilder sb = new StringBuilder();
 
             sb.Append(@"<div class='grid'>");
@@ -111,12 +116,13 @@ namespace Gamestore
                 //Image du jeu avec lien
                 sb.AppendFormat(@"<a href='{0}'>", detailUrl);
                 sb.AppendFormat(@"<img src='{0}' class='img_game' />", game.urlImage);
-                sb.AppendFormat(@"</a>");
-
                 if (game.discount > 0)
                 {
                     sb.AppendFormat(@"<div class='discount'>-{0}%</div>", game.discount);
                 }
+                sb.AppendFormat(@"</a>");
+
+                
 
                 //PEGI
                 sb.Append(@"<div class='PEGI'>");

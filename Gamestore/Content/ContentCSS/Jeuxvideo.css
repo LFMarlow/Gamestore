@@ -1,8 +1,9 @@
-﻿.body {
+﻿/* Style global, conserve l'affichage actuel pour les grands écrans */
+.body {
     color: white;
 }
 
-.title_default{
+.title_default {
     color: white;
     text-align: center;
 }
@@ -12,7 +13,6 @@
     gap: 35px;
     grid-template-columns: repeat(4, 1fr);
     margin-top: -405px;
-    margin-left: 150px;
 }
 
 .img_game {
@@ -56,7 +56,7 @@
     margin-left: 80px;
 }
 
-.no_stock_game{
+.no_stock_game {
     float: right;
     color: red;
 }
@@ -64,6 +64,7 @@
 .filters_container {
     color: white;
     width: 100px;
+    margin-left: -200px;
 }
 
 .genreGame {
@@ -75,6 +76,7 @@
 .price_filter {
     color: white;
     width: 100px;
+    margin-left: -200px;
 }
 
 .title_filter {
@@ -100,10 +102,10 @@
     font-weight: 700;
     padding: 5px 6px 6px 7px;
     position: absolute;
-    bottom: 67px;
     right: 9px;
     margin: 0;
     z-index: 1;
+    margin-top: -35px;
 }
 
 .PEGI {
@@ -116,4 +118,147 @@
     width: 50px;
     position: absolute;
     top: 7px;
+}
+
+#div_content_footer {
+    height: 500px;
+    width: 1350px;
+    display: flex;
+    position: relative;
+    right: 500px;
+}
+
+footer {
+    margin-left: 500px;
+}
+
+/* Media Queries pour écrans plus petits */
+@media only screen and (max-width: 1200px) {
+    #div_content_footer {
+        width: 100%;
+        right: 0; /* Supprimer le décalage vers la droite */
+        justify-content: center; /* Centrer le contenu si besoin */
+    }
+
+    footer {
+        margin-left: 0; /* Supprimer la marge pour un meilleur ajustement */
+    }
+}
+
+/* Media Queries pour écran mobile */
+@media only screen and (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 0;
+        gap: 20px;
+    }
+
+    .price_filter {
+        width: auto;
+        margin-left: 0;
+        display: block;
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    .filters_container {
+        width: auto;
+        margin-left: 0;
+        display: block;
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    .title_filter {
+        width: auto;
+        margin-top: -50px;
+    }
+
+    .BtnAddToCart {
+        margin-left: 0;
+        text-align: center;
+        display: block;
+        margin: 10px auto;
+    }
+
+    .price_game {
+        font-size: 18px;
+        float: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .info_game {
+        height: auto;
+        margin-top: 10px;
+    }
+
+    .img_game {
+        height: auto;
+    }
+
+    .PEGI {
+        display: none;
+    }
+
+    #div_content_footer {
+        flex-direction: column; /* Passer à une disposition en colonne pour les petits écrans */
+        height: auto; /* Ajuster automatiquement la hauteur */
+        width: 100%; /* Utiliser toute la largeur disponible */
+        padding: 20px; /* Ajouter un peu de padding pour plus d'espace */
+        right: 0; /* Aucune position à droite pour l'affichage mobile */
+    }
+
+    footer {
+        margin-left: 0;
+        padding: 10px; /* Un peu de padding pour mieux s'adapter aux petits écrans */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .title_game {
+        font-size: 14px;
+    }
+
+    .price_game {
+        font-size: 16px;
+        float: right;
+        margin-top: -35px;
+    }
+
+    .BtnAddToCart {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #div_content_footer {
+        height: auto; /* Ajustement automatique pour les très petits écrans */
+        padding: 10px; /* Réduire les marges pour s’adapter */
+    }
+
+    footer {
+        margin-left: 0;
+        padding: 5px; /* Réduire encore le padding pour les écrans vraiment petits */
+    }
+
+    .discount {
+        background-color: orangered;
+        border-radius: 5px 5px 0;
+        color: #fff;
+        font-weight: 700;
+        padding: 5px 6px 6px 7px;
+        position: absolute;
+        bottom: 70px;
+        right: 9px;
+        margin: 0;
+        z-index: 1;
+    }
+
+    .title_default {
+        margin-top: -35px;
+    }
 }

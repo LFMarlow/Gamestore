@@ -7,7 +7,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gamestore - Boutique de vente de jeux vidéos</title>
+    <meta name="description" content="Explorez Gamestore pour les dernières sorties et les meilleures offres sur les jeux PC et Consoles !" />
+    <meta property="og:title" content="Gamestore - Boutique de vente de jeux vidéos pour PC et Consoles !" />
+    <meta property="og:site_name" content="Gamestore" />
+    <meta property="og:description" content="Explorez Gamestore pour les dernières sorties et les meilleures offres sur les jeux PC et Consoles !" />
+    <meta property="og:url" content="https://gamestoreecf.azurewebsites.net" />
+    <meta property="og:type" content="Jeux Vidéos" />
+    <title>Acheter des Jeux PC et Consoles et profiter des dernières sorties et des meilleures offres | Gamestore</title>
+    <link rel="canonical" href="https://gamestoreecf.azurewebsites.net" />
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -41,7 +48,7 @@
 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm">
             <div class="container">
-                <a class="navbar-brand" runat="server" href="~/"><img src="../Content/ContentIMG/logo.png" class="logo_header" /></a>
+                <a class="navbar-brand" runat="server" href="~/"><img src="../Content/ContentIMG/logo.png" class="logo_header" alt="Logo de Gamestore, entreprise de vente de jeux vidéo"/></a>
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Activer/désactiver la navigation" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -52,7 +59,7 @@
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Jeuxvideo">Tous nos Jeux Vidéos</a></li>
                         <%if (!Convert.ToBoolean(Session["EstConnecte"]))
                           { %>
-                              <a href="/Connexion"><img src="Content/ContentIMG/connexion.png" class="photo_login"/></a>
+                              <a href="/Connexion"><img src="Content/ContentIMG/connexion.png" class="photo_login" alt="Image de Connexion"/></a>
                            <%}
                           else 
                           { %>
@@ -71,7 +78,7 @@
             <p class="copyright">&copy; <%: DateTime.Now.Year %> - Gamestore</p>
             <footer>
                 <div id="div_content_footer">
-                    <img src="Content/ContentIMG/logo.png" class="logo_footer" />
+                    <img src="Content/ContentIMG/logo.png" class="logo_footer" alt="Logo Gamestore"/>
                     <div class="col-md-4 col-sm-6">
                         <div class="footerWidget">
                             <h4 id="row_2_footer"><center>Gamestore</center></h4>

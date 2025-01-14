@@ -375,6 +375,11 @@ namespace Gamestore
                 LblTotalPrice.Visible = false;
                 BtnValiderCart.Visible = false;
                 CalendarCart.Visible = false;
+                DdlNameStore.Visible = false;
+                Label3.Visible = false;
+                LblStoreNearUser.Visible = false;
+                LblStoreNearUserReal.Visible = false;
+                Label1.Visible = false;
 
                 System.Web.UI.WebControls.Image Img_Cart = Master.FindControl("ImgCart") as System.Web.UI.WebControls.Image;
                 if (Img_Cart != null)
@@ -394,6 +399,8 @@ namespace Gamestore
             String etatCommand = "Validé";
             String genreGame = "";
             List<String> stringsInCart = new List<String>();
+
+            bool isOk = false;
             
 
             //Récupération de la date choisi par l'utilisateur
@@ -455,6 +462,9 @@ namespace Gamestore
                                 //On créer la command du jeu ciblé
                                 commandInscrit = objDal.CreateCommand(etatCommand, titleGame, genreGame, dateRetrait, selectedStore, idGame, idClientCommand);
                                 quantityStockGame = quantityStockGame - 1;
+
+                                isOk = true;
+                                
                             }
                             else if(DdlNameStore.SelectedIndex > 0)
                             {
@@ -463,6 +473,8 @@ namespace Gamestore
                                 //On créer la command du jeu ciblé
                                 commandInscrit = objDal.CreateCommand(etatCommand, titleGame, genreGame, dateRetrait, selectedStore, idGame, idClientCommand);
                                 quantityStockGame = quantityStockGame - 1;
+
+                                isOk = true;
 
                             }
                             else if(DdlNameStore.SelectedIndex == 0 && LblStoreNearUserReal.Visible == false)
@@ -474,12 +486,11 @@ namespace Gamestore
                         {
                             Alert.Show("Impossible de passé la commande. Nous n'avons plus ce jeu en stock");
                         }
-                        
 
                         if(commandInscrit == true)
                         {
                             //On change la quantité en stock du jeu une fois que la commande est passé
-                            bool isOk = objDal.UpdateQuantiteStock(quantityStockGame, titleGame);
+                            isOk = objDal.UpdateQuantiteStock(quantityStockGame, titleGame);
                         }
                     }
                     else
@@ -497,17 +508,15 @@ namespace Gamestore
 
             if (commandInscrit == true)
             {
+                Alert.Show("Commande validé avec succès ! Vous allez recevoir un mail de confirmation de commande.");
+
                 //On supprime les objets dans le panier
                 bool isAllDlelete = false;
                 isAllDlelete = objDal.DeleteAllInCart(idClient);
 
                 //On envoi l'email et on mets à jour le panier
                 SendEmail();
-                MaJCart();
-
-                Alert.Show("Commande validé avecc succès ! Vous allez recevoir un mail de confirmation de commande.");
-
-                Response.Redirect("~/Jeuxvideo");
+                MaJCart();                
             }
             else
             {
@@ -539,7 +548,7 @@ namespace Gamestore
             message.Body = textMail;
 
             //Informations d'identification requises pour la connexion
-            smtp.Credentials = new NetworkCredential("thomas59.lesage@gmail.com", "ungx otdh nqwi elhb");
+            smtp.Credentials = new NetworkCredential("thomas59.lesage@gmail.com", "ofgu iskc oyvj ynqc");
 
             //Hôte SMTP + N° Port
             smtp.Host = "smtp.gmail.com";
@@ -550,6 +559,8 @@ namespace Gamestore
 
             //Envoi du mail
             smtp.Send(message);
+
+            
         }
 
         //Cacher certaine date du Calendrier

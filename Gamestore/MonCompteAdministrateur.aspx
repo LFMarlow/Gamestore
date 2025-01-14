@@ -172,7 +172,7 @@
                                 &nbsp;
                                 <br />
                                 <br />
-                                <asp:Image ID="IMGGame" CssClass="img_game" runat="server" />
+                                <asp:Image ID="IMGGame" CssClass="img_game" runat="server" alt="Image de jeux video" />
                                 &nbsp;
                                 &nbsp;
                                 <div id="contenu_game_gest_stock" class="contenu_game" runat="server">
@@ -214,7 +214,7 @@
                                 &nbsp;
                                 <br />
                                 <br />
-                                <asp:Image ID="ImgGamePromo" CssClass="img_game" runat="server" />
+                                <asp:Image ID="ImgGamePromo" CssClass="img_game" runat="server" alt="Image de jeux vidéo en promotions"/>
                                 &nbsp;
                                 &nbsp;
                                 <div id="contenue_game" class="contenu_game" runat="server">
@@ -255,7 +255,7 @@
                             &nbsp;
                             <br />
                             <br />
-                            <asp:Image ID="ImgSupprPromo" CssClass="img_game" runat="server" />
+                            <asp:Image ID="ImgSupprPromo" CssClass="img_game" runat="server" alt="Image de jeux vidéo sans promotions"/>
                             &nbsp;
                             &nbsp;
                             <div  id="contenu_game" class="contenu_game" runat="server">

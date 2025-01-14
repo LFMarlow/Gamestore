@@ -2,16 +2,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link href="/Content/ContentCSS/PasswordOublie.css" rel="stylesheet" />
     <div id="div_content_passwordForgot">
-        <h2><b><asp:Label ID="LblMotdePasseOublie" runat="server" Text="Vous allez recevoir un Mail pour redéfinir un nouveau Mot de Passe"></asp:Label></b></h2>
-        <br />
-        <br />
+        <h2><b><asp:Label ID="LblMotdePasseOublie" runat="server" CssClass="LblMotdePasseOublie" Text="Vous allez recevoir un Mail pour redéfinir un nouveau Mot de Passe"></asp:Label></b></h2>
+        &nbsp;
         <asp:Label ID="LblMail" runat="server" CssClass="LabelOubli" Text="Adresse E-Mail"></asp:Label>
-        <br />
+        &nbsp;
         <asp:TextBox ID="TxtBoxMail" TextMode="Email" placeholder="Votre Adresse E-Mail" runat="server"></asp:TextBox>
-        <br />
-        <br />
+        &nbsp;
+        &nbsp;
         <asp:Button ID="BtnChangePassword" runat="server" CssClass="BtnChangePassword" Text="Valider" OnClick="BtnChangePassword_Click" />
-        <br />
-        <br />
+        &nbsp;
+        &nbsp;
     </div>
 </asp:Content>

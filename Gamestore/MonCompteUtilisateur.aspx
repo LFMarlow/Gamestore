@@ -28,9 +28,9 @@
         <br />
         <h2 id="title_menu" class="title_menu" runat="server"></h2>
         <br />
-        <asp:Panel ID="PnlHistCommand" runat="server">
+        <asp:Panel ID="PnlHistCommand" CssClass="PnlHistCommand" runat="server">
         </asp:Panel>
-        <asp:Panel ID="PnlModifInfos" runat="server">
+        <asp:Panel ID="PnlModifInfos" CssClass="PnlModifInfos" runat="server">
             <div class="mi">
                 <div class="mi_left">
                     <p>Prénom :</p>

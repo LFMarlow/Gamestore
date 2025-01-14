@@ -33,8 +33,7 @@
 .PnlSubmitCart {
     color: white;
     float: right;
-    margin-top: -250px;
-    margin-left: 850px;
+    display: grid;
 }
 
 .btn {
@@ -65,4 +64,48 @@
 
 #calendarContainer {
     color: white;
+}
+
+/* Media Queries pour rendre la page responsive */
+@media (max-width: 1024px) { 
+    .img_game {
+        width: 50%; /* Réduction de la taille de l'image */
+        max-width: 300px; /* Pour maintenir la largeur maximale */
+        margin: auto; /* Centrage de l'image */
+    }
+
+    .contenu_game, .contenu2_game {
+        position: static; /* Suppression du positionnement absolu */
+        margin: 20px auto; /* Centrage et ajout d'espace autour */
+        text-align: center; /* Alignement du texte */
+        width: auto; /* Adaptation de la largeur */
+    }
+
+    .PnlCart {
+        width: 100%; /* Adaptation de la largeur */
+    }
+
+    .PnlSubmitCart {
+        float: none;
+        margin-top: 20px; /* Ajout d'espace au-dessus pour la clarté */
+    }
+
+    .LblEmpty, .BtnSuppr {
+        margin-left: 0; /* Suppression de la marge spécifique */
+    }
+}
+
+@media (max-width: 768px) { 
+    .content_cart {
+        width: 95%; /* Augmentation de la largeur pour les petits écrans */
+    }
+
+    .img_game {
+        width: 70%; /* Augmentation de la taille de l'image pour la visibilité */
+    }
+
+    .btn, .BtnSuppr {
+        width: 100%; /* Boutons pleine largeur pour faciliter l'accès */
+        margin: 10px 0; /* Ajout d'espace autour des boutons */
+    }
 }

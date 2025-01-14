@@ -17,3 +17,46 @@
     text-align-last: center;
     color: white;
 }
+
+@media only screen and (max-width: 480px) {
+    .logo_footer {
+        width: 10em;
+        height: 10em;
+        margin-left: 110px;
+        margin-top: 10px;
+    }
+
+    .footerWidget {
+        margin-top: 174px;
+        color: white;
+        margin-left: -167px;
+    }
+
+    .footerWidget2 {
+        margin-top: 395px;
+        color: white;
+        margin-left: -127px;
+    }
+
+    .photo_login {
+        width: 2em;
+        height: 2em;
+        margin-left: 53px;
+        margin-top: 5px;
+    }
+
+    #div_content_footer {
+        display: flex;
+        position: relative;
+        right: 10px;
+        width: 0%;
+    }
+
+    footer {
+        margin-left: 0px;
+    }
+
+    .mon_compte{
+        margin-left: 0px;
+    }
+}

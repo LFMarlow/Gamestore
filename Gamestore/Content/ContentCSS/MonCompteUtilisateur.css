@@ -1,203 +1,98 @@
-﻿.main_account {
-    margin-bottom: 3px;
+﻿.main_account, .hello {
     padding: 20px 13px;
     position: relative;
     overflow: hidden;
+    color: white;
+    
 }
 
 .div_aside {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante si l'espace est insuffisant */
 }
 
 .left_aside {
-    width: 15%;
+    flex: 1; /* Adapte automatiquement la largeur disponible */
+    min-width: 150px; /* Largeur minimale pour éviter que le texte ne se superpose */
 }
 
-.hello {
-    margin-bottom: 3px;
-    overflow: hidden;
-    padding: 20px 13px;
-    position: relative;
-    overflow: hidden;
-    color: white;
-    backdrop-filter: blur(30px) saturate(100%);
-}
-
-.btnDisconnect {
+.btnDisconnect, .btnValidate, .btnChangePassword {
     border: 2px solid #e61414;
-    border-color: #e61414;
-    color: #e61414;
-    -webkit-font-smoothing: antialiased;
-    -webkit-appearance: none;
     border-radius: 40px;
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
     font-weight: 600;
-    margin: 0 10px 10px 0;
-    padding: 10px 17px 9px;
-    position: relative;
+    padding: 10px 17px;
     text-align: center;
-    text-decoration: none;
     text-transform: uppercase;
-    -webkit-transition: all .2s;
     transition: all .2s;
+    margin-bottom: 10px; /* Uniformise les marges pour la cohérence */
+    width: auto; /* Permet au bouton de s'adapter au contenu */
 }
 
-    .btnDisconnect:hover {
-        background-color: #e61414;
-        color: white;
-    }
-
-.right_aside {
-    margin-top: 80px;
-    margin-left: 150px;
+.right_aside, .mi_password {
+    margin: 20px auto; /* Centrer et ajouter une marge pour toutes tailles */
+    max-width: 90%; /* Empêche l'élément de devenir trop large */
 }
 
-.change_info {
-    max-width: 315px;
-}
-
-.title_menu {
-    color: white;
-    text-align: center;
-}
-
-.hc {
-    display: flex;
-    backdrop-filter: blur(30px) saturate(100%);
-    width: 605px;
-    height: 235px;
-}
-
-.hc_menu {
-    color: white;
-    width: 880px;
+.hc, .hc_menu, .mi_left {
+    width: 100%; /* S'assure que la largeur ne dépasse pas l'écran */
 }
 
 .img_game {
-    width: 270px;
-    border-radius: 30px;
-    margin-left: 20px;
+    width: 100%; /* Adapte la largeur de l'image à son conteneur */
+    max-width: 270px; /* Conserve la largeur maximale originale */
 }
-
-.contenu_game {
-    display: inline-block;
-    position: absolute;
-}
-
-.contenu2_game {
-    margin-top: 50px;
-}
-
-.separate_content {
-    margin: 1rem 0;
-    color: white;
-    opacity: 2;
-    width: 250px;
-}
-
-.mi {
-    display: flex;
-    backdrop-filter: blur(30px) saturate(100%);
-    width: 100%;
-    height: 240px;
-    align-items: center;
-    justify-content: center;
-}
-
-.mi_left {
-    color: white;
-    width: 500px;
-    display: inline-block;
-}
-
-.mi_right {
-    float: right;
-    color: white;
-}
-
-.btn_validate {
-    justify-content: center;
-    display: flex;
-}
-
-.mi_password {
-    backdrop-filter: blur(30px) saturate(100%);
-    margin-left: 400px;
-    margin-right: 400px;
-}
-
-.actual_password {
-    justify-content: center;
-    display: flex;
-}
-
-.new_password {
-    justify-content: center;
-    display: flex;
-}
-
-.confirm_actual_password {
-    justify-content: center;
-    display: flex;
-}
-
-.btnValidate {
-    border: 2px solid #e61414;
-    border-color: #e61414;
-    color: #e61414;
-    -webkit-font-smoothing: antialiased;
-    -webkit-appearance: none;
-    border-radius: 40px;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 600;
-    margin: 0 10px 10px 0;
-    padding: 10px 17px 9px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    -webkit-transition: all .2s;
-    transition: all .2s;
-}
-
-    .btnValidate:hover {
-        background-color: #e61414;
-        color: white;
-    }
-
-.btnChangePassword {
-    border: 2px solid #e61414;
-    border-color: #e61414;
-    color: #e61414;
-    -webkit-font-smoothing: antialiased;
-    -webkit-appearance: none;
-    border-radius: 40px;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 600;
-    margin: 0 10px 10px 0;
-    padding: 10px 17px 9px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    -webkit-transition: all .2s;
-    transition: all .2s;
-}
-
-    .btnChangePassword:hover {
-        background-color: #e61414;
-        color: white;
-    }
 
 .grid {
     display: grid;
-    gap: 35px;
-    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Crée autant de colonnes que possible */
+}
+
+.title_menu{
+    text-align: center;
+}
+
+.mi{
+    text-align: center;
+}
+
+.btn_validate {
+    text-align: center;
+}
+
+.mi_password {
+    text-align: center;
+}
+
+.hello {
+    width: 35%;
+    backdrop-filter: blur(30px) saturate(100%);
+}
+
+.PnlHistCommand {
+    backdrop-filter: blur(30px) saturate(100%);
+}
+
+.PnlModifInfos {
+    backdrop-filter: blur(30px) saturate(100%);
+}
+
+
+@media (max-width: 768px) {
+    .btnDisconnect, .btnValidate, .btnChangePassword {
+        width: 100%; /* Étend les boutons pour une meilleure accessibilité sur les appareils mobiles */
+        margin: 10px 0; /* Assure l'espacement autour des boutons */
+    }
+
+    .div_aside, .hc, .mi {
+        flex-direction: column;
+    }
+
+    .hello{
+        width: 100%;
+    }
 }

@@ -67,3 +67,79 @@
     font-weight: 700;
     font-size: 30px;
 }
+
+/*Media Queries pour Tablette*/
+@media only screen and (max-width: 1200px) {
+    .img_slide {
+        max-width: 500px; 
+    }
+
+    #carouselSold, #carouselReduction {
+        max-width: 80%; 
+    }
+}
+
+/* Ajustements pour mobiles */
+@media only screen and (max-width: 768px) {
+    .img_slide {
+        max-width: 400px; 
+    }
+
+    #carouselSold, #carouselReduction {
+        max-width: 90%; 
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .img_slide {
+        max-width: 100%;
+    }
+
+    #carouselSold, #carouselReduction {
+        max-width: 100%;
+        margin-top: 0;
+        margin-left: 40px;
+        width: 80%;
+    }
+
+    .exp_default {
+        font-size: 0.8em;
+        text-align: center;
+    }
+
+    .logo_footer {
+        width: 10em;
+        height: 10em;
+        margin-left: 100px;
+        margin-top: 0px;
+    }
+
+    .footerWidget {
+        margin-top: 170px;
+        color: white;
+        margin-left: -175px;
+    }
+
+    .footerWidget2 {
+        margin-top: 400px;
+        color: white;
+        margin-left: -190px;
+    }
+
+    .photo_login {
+        width: 2em;
+        height: 2em;
+        margin-left: 53px;
+        margin-top: 5px;
+    }
+
+    #div_content_footer {
+        display: flex;
+        position: relative;
+        width: 0%;
+    }
+
+    .mon_compte {
+        margin-left: 0px;
+    }
+}

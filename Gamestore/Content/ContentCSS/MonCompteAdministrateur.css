@@ -1,160 +1,114 @@
-﻿.main_account {
-    margin-bottom: 3px;
+﻿.main_account, .hello {
     padding: 20px 13px;
     position: relative;
     overflow: hidden;
+    color: white;
+    
+}
+
+.hello {
+    backdrop-filter: blur(30px) saturate(100%);
+    width: 35%;
 }
 
 .div_aside {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-.left_aside {
-    width: 15%;
-}
-
-.hello {
-    margin-bottom: 3px;
-    overflow: hidden;
-    padding: 20px 13px;
-    position: relative;
-    overflow: hidden;
-    color: white;
-    backdrop-filter: blur(30px) saturate(100%);
+.left_aside, .right_aside {
+    flex: 1 1 200px;
 }
 
 .btnDisconnect {
     border: 2px solid #e61414;
-    border-color: #e61414;
-    color: #e61414;
-    -webkit-font-smoothing: antialiased;
-    -webkit-appearance: none;
     border-radius: 40px;
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
     font-weight: 600;
     margin: 0 10px 10px 0;
-    padding: 10px 17px 9px;
-    position: relative;
+    padding: 10px 17px;
     text-align: center;
-    text-decoration: none;
     text-transform: uppercase;
-    -webkit-transition: all .2s;
     transition: all .2s;
 }
+
     .btnDisconnect:hover {
         background-color: #e61414;
         color: white;
     }
 
 .right_aside {
-    margin-top: 80px;
-    margin-left: 150px;
+    margin-top: 20px;
 }
 
-.title_menu {
-    color: white;
-    text-align: center;
-}
-
-.cvg {
+.cvg, .description_cvg, .info_container_ce, .div_btn {
     display: flex;
     justify-content: center;
-    backdrop-filter: blur(30px) saturate(100%);
+    flex-wrap: wrap;
 }
 
-.cvg_menu {
-    color: white;
-    width: 78%;
-
-}
-
-.info_container {
+.info_container, .info_container_second, .info_container_ce {
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
     align-items: flex-start;
-}
-
-.cvg_first_section {
-    display: flex;
-    align-items: baseline;
-}
-
-.title_game {
-    margin-left: 50px;
-}
-
-.price_game {
-    margin-left: 50px;
-}
-
-.qte_game {
-    margin-left: 50px;
-}
-
-.info_container_second {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.cvg_second_section {
-    display: flex;
-    align-items: baseline;
-}
-
-.genre_game {
-    margin-left: 50px;
-}
-
-.TxtBoxDescription {
-    width: 600px;
-    height: 150px
-}
-
-.description_cvg {
-    display: grid;
-    justify-content: center;
-}
-
-.div_btn {
-    display: flex;
-    justify-content: center;
-}
-
-.info_container_ce {
-    display: grid;
-    justify-content: center;
-}
-
-.ce_first_section {
-    display: grid;
+    width: 100%;
 }
 
 .img_game {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     border-radius: 30px;
 }
 
-.contenu_game {
-    display: inline-block;
-    position: absolute;
+.TxtBoxDescription, .cvg_menu {
+    width: 100%;
 }
 
-.contenu2_game {
-    margin-top: 50px;
+.cvg {
+    backdrop-filter: blur(30px) saturate(100%);
 }
 
-.separate {
-    margin: 1rem 0;
-    color: white;
-    opacity: 2;
+.TxtBoxDescription{
+    height: 200px;
 }
 
-.contenu3_game {
-    margin-top: -9px;
+@media (max-width: 768px) {
+    .left_aside, .right_aside {
+        width: 100%; 
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    .img_game {
+        max-width: 100%;
+    }
+
+    .btnDisconnect {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .title_game, .price_game, .qte_game, .genre_game {
+        margin-left: 10px;
+    }
+
+    .hello {
+        backdrop-filter: blur(30px) saturate(100%);
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .title_menu, .cvg_menu, .title_game, .price_game, .qte_game, .genre_game {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .hello {
+        backdrop-filter: blur(30px) saturate(100%);
+        width: 100%;
+    }
 }

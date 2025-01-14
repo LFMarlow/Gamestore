@@ -1,58 +1,58 @@
 ﻿/* Style général pour le GridView */
 .grid_summary .GridViewSalesSummary {
-    width: 100%; /* Adaptation à la largeur du conteneur */
-    background-color: #333; /* Couleur de fond du GridView */
-    color: white; /* Couleur du texte */
-    border-collapse: collapse; /* Suppression des espaces entre les cellules */
-    font-family: Arial, sans-serif; /* Police de caractères */
+    width: 100%;
+    background-color: #333;
     color: white;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
 }
 
-/* Style pour les en-têtes */
-.grid_summary .GridViewSalesSummary th {
-    background-color: #555; /* Couleur de fond des en-têtes */
-    padding: 8px; /* Espacement interne */
-    font-size: 16px; /* Taille de la police */
-    text-align: center;/*Alignement des en-têtes du DataGridView*/
-}
+    /* Style pour les en-têtes */
+    .grid_summary .GridViewSalesSummary th {
+        background-color: #555;
+        padding: 8px;
+        font-size: 16px;
+        text-align: center;
+    }
 
-/* Style pour les cellules */
-.grid_summary .GridViewSalesSummary td {
-    padding: 8px; /* Espacement interne */
-    text-align: center; /* Alignement du texte */
-    border-bottom: 1px solid #444; /* Bordure inférieure */
- }
+    /* Style pour les cellules */
+    .grid_summary .GridViewSalesSummary td {
+        padding: 8px;
+        text-align: center;
+        border-bottom: 1px solid #444;
+    }
 
-/* Style pour les lignes en alternance */
-.grid_summary .GridViewSalesSummary tr:nth-child(odd) {
-    background-color: #383838; /* Couleur de fond pour les lignes impaires */
-}
+    /* Style pour les lignes en alternance */
+    .grid_summary .GridViewSalesSummary tr:nth-child(odd) {
+        background-color: #383838;
+    }
 
-.grid_summary .GridViewSalesSummary tr:nth-child(even) {
-    background-color: #404040; /* Couleur de fond pour les lignes paires */
-}
+    .grid_summary .GridViewSalesSummary tr:nth-child(even) {
+        background-color: #404040;
+    }
 
 .title_menu {
     color: white;
     text-align: center;
 }
 
-.Lbl{
+.Lbl {
     color: white;
 }
 
 .filter_date {
-    margin-left: 250px;
     margin-top: -50px;
+    margin-left: 251px;
 }
 
 .filter_game {
-    margin-left: 510px;
-    margin-top: -50px;
+    margin-top: -51px;
+    margin-left: 517px;
 }
 
 .gridview-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     background-color: #333;
     padding: 20px;
@@ -65,12 +65,9 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
-    width: 200px; /* Adjust based on content */
-}
-
-.grid_summary_compared .gridview-container th {
-    color: white;
-    text-align: center; /*Alignement des en-têtes du DataGridView*/
+    width: 100%; 
+    max-width: 200px; 
+    margin: 10px;
 }
 
 .gridview-header {
@@ -90,4 +87,38 @@
 
 .text-red {
     color: red;
+}
+
+/* Media Queries pour ajuster les tailles de texte et autres sur petits écrans */
+@media (max-width: 768px) {
+    .grid_summary .GridViewSalesSummary th,
+    .grid_summary .GridViewSalesSummary td {
+        padding: 4px; 
+        font-size: 14px; 
+    }
+
+    .gridview-header,
+    .gridview-data {
+        font-size: 16px; 
+    }
+
+    .gridview-header{
+        color: #ccc;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter_date, .filter_game {
+        margin-left: 0px;
+        width: auto;
+        margin-top: 10px;
+    }
+
+    .gridview-header {
+        color: #ccc;
+    }
+
+    .gridview-item {
+        width: 85%;
+    }
 }

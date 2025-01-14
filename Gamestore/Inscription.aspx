@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Inscription.aspx.cs" Inherits="Gamestore.Inscription" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link href="/Content/ContentCSS/Inscription.css" rel="stylesheet" />
+    <script type="text/javascript" src="Scripts/ContentJS/Inscription.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@2/dist/purify.min.js"></script>
     <main aria-labelledby="title">
         <div id="div_content" >
             <h2><b><asp:Label ID="LblInscription" runat="server" Text="Inscription"></asp:Label></b></h2>

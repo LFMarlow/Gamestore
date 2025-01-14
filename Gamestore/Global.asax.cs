@@ -17,5 +17,12 @@ namespace Gamestore
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+            HttpContext.Current.Response.Headers.Add("X-Frame-Options", "SAMEORIGIN");
+            HttpContext.Current.Response.Headers.Add("Content-Security-Policy", "frame-ancestors 'self'");
+        }
+
     }
 }

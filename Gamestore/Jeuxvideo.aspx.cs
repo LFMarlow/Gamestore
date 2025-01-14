@@ -82,14 +82,19 @@ namespace Gamestore
                 //Ajout des entrées au DropDownList
                 foreach (var s in Split)
                 {
-                    var item = new ListItem(s);
-                    bool existeDeja = CheckBoxGenre.Items.Contains(item);
-                    if (existeDeja == false)
+                    // Supprime les espaces au début et à la fin, et vérifie les espaces internes
+                    string trimmedAndCleaned = s.Trim();
+                    if (trimmedAndCleaned.Replace(" ", "").Length == trimmedAndCleaned.Length)
                     {
-                        CheckBoxGenre.Items.Add(s);
-
+                        var item = new ListItem(trimmedAndCleaned);
+                        bool existeDeja = CheckBoxGenre.Items.FindByText(trimmedAndCleaned) != null;
+                        if (!existeDeja)
+                        {
+                            CheckBoxGenre.Items.Add(item);
+                        }
                     }
                 }
+
             }
 
             //Affichage des jeux
@@ -115,7 +120,7 @@ namespace Gamestore
 
                 //Image du jeu avec lien
                 sb.AppendFormat(@"<a href='{0}'>", detailUrl);
-                sb.AppendFormat(@"<img src='{0}' class='img_game' />", game.urlImage);
+                sb.AppendFormat(@"<img src='{0}' class='img_game' alt='Image de {1}' />", game.urlImage, game.title);
                 if (game.discount > 0)
                 {
                     sb.AppendFormat(@"<div class='discount'>-{0}%</div>", game.discount);

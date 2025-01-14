@@ -8,7 +8,7 @@
 
         <div class="section_content" aria-labelledby="aspnetTitle">
             <div class="class_content">
-                <h2 class="title_default">GAMESTORE</h2>
+                <h1 class="title_default">GAMESTORE</h1>
                 <br />
                 <br />
                 <p class="exp_default"><strong>Mission</strong> : Gamestore s'engage à offrir une expérience de jeu inégalée en proposant une large gamme de jeux vidéo, de consoles et d'accessoires de haute qualité, accessibles à tous les passionnés de jeux, des amateurs aux hardcore gamers.</p>
@@ -33,43 +33,43 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <a id="img0" runat="server">
-                            <asp:Image ID="Image0" CssClass="img_slide" runat="server" /></a>
+                            <asp:Image ID="Image0" CssClass="img_slide" runat="server" alt="JeuxVideo" /></a>
                     </div>
                     <div class="carousel-item">
                         <a id="img1" runat="server">
-                            <asp:Image ID="Image1" CssClass="img_slide" runat="server" /></a>
+                            <asp:Image ID="Image1" CssClass="img_slide" runat="server" alt="JeuxVideo" /></a>
                     </div>
                     <div class="carousel-item">
                         <a id="img2" runat="server">
-                            <asp:Image ID="Image2" CssClass="img_slide" runat="server" /></a>
+                            <asp:Image ID="Image2" CssClass="img_slide" runat="server" alt="JeuxVideo"/></a>
                     </div>
                     <div class="carousel-item ">
                         <a id="img3" runat="server">
-                            <asp:Image ID="Image3" CssClass="img_slide" runat="server" /></a>
+                            <asp:Image ID="Image3" CssClass="img_slide" runat="server" alt="JeuxVideo"/></a>
                     </div>
                     <div class="carousel-item">
                         <a id="img4" runat="server">
-                            <asp:Image ID="Image4" CssClass="img_slide" runat="server" /></a>
+                            <asp:Image ID="Image4" CssClass="img_slide" runat="server" alt="JeuxVideo"/></a>
                     </div>
                     <div class="carousel-item">
                         <a id="img5" runat="server">
-                            <asp:Image ID="Image5" CssClass="img_slide" runat="server" /></a>
+                            <asp:Image ID="Image5" CssClass="img_slide" runat="server" alt="JeuxVideo"/></a>
                     </div>
                     <div class="carousel-item">
                         <a id="img6" runat="server">
-                            <asp:Image ID="Image6" CssClass="img_slide" runat="server" /></a>
+                            <asp:Image ID="Image6" CssClass="img_slide" runat="server" alt="JeuxVideo"/></a>
                     </div>
                     <div class="carousel-item">
                         <a id="img7" runat="server">
-                            <asp:Image ID="Image7" CssClass="img_slide" runat="server" /></a>
+                            <asp:Image ID="Image7" CssClass="img_slide" runat="server" alt="JeuxVideo"/></a>
                     </div>
                     <div class="carousel-item">
                         <a id="img8" runat="server">
-                            <asp:Image ID="Image8" CssClass="img_slide" runat="server" /></a>
+                            <asp:Image ID="Image8" CssClass="img_slide" runat="server" alt="JeuxVideo"/></a>
                     </div>
                     <div class="carousel-item">
                         <a id="img9" runat="server">
-                            <asp:Image ID="Image9" CssClass="img_slide" runat="server" /></a>
+                            <asp:Image ID="Image9" CssClass="img_slide" runat="server" alt="JeuxVideo"/></a>
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselSold" data-bs-slide="prev">
@@ -101,7 +101,7 @@
                     <!-- Slides du carrousel -->
                     <div class="carousel-item active">
                         <a id="A0" runat="server">
-                            <asp:Image ID="ImgReduc0" CssClass="img_slide" runat="server" />
+                            <asp:Image ID="ImgReduc0" CssClass="img_slide" runat="server" alt="JeuxVideo"/>
                         </a>
                         <div class="discount">
                             <asp:Label ID="LblDiscount0" CssClass="LblDiscount" runat="server" Text=""></asp:Label>
@@ -109,7 +109,7 @@
                     </div>
                     <div class="carousel-item">
                         <a id="A1" runat="server">
-                            <asp:Image ID="ImgReduc1" CssClass="img_slide" runat="server" />
+                            <asp:Image ID="ImgReduc1" CssClass="img_slide" runat="server" alt="JeuxVideo"/>
                         </a>
                         <div class="discount">
                             <asp:Label ID="LblDiscount1" CssClass="LblDiscount" runat="server" Text=""></asp:Label>
@@ -117,7 +117,7 @@
                     </div>
                     <div class="carousel-item">
                         <a id="A2" runat="server">
-                            <asp:Image ID="ImgReduc2" CssClass="img_slide" runat="server" />
+                            <asp:Image ID="ImgReduc2" CssClass="img_slide" runat="server" alt="JeuxVideo"/>
                         </a>
                         <div class="discount">
                             <asp:Label ID="LblDiscount2" CssClass="LblDiscount" runat="server" Text=""></asp:Label>
@@ -125,7 +125,7 @@
                     </div>
                     <div class="carousel-item">
                         <a id="A3" runat="server">
-                            <asp:Image ID="ImgReduc3" CssClass="img_slide" runat="server" />
+                            <asp:Image ID="ImgReduc3" CssClass="img_slide" runat="server" alt="JeuxVideo"/>
                         </a>
                         <div class="discount">
                             <asp:Label ID="LblDiscount3" CssClass="LblDiscount" runat="server" Text=""></asp:Label>
@@ -133,7 +133,7 @@
                     </div>
                     <div class="carousel-item">
                         <a id="A4" runat="server">
-                            <asp:Image ID="ImgReduc4" CssClass="img_slide" runat="server" />
+                            <asp:Image ID="ImgReduc4" CssClass="img_slide" runat="server" alt="JeuxVideo"/>
                         </a>
                         <div class="discount">
                             <asp:Label ID="LblDiscount4" CssClass="LblDiscount" runat="server" Text=""></asp:Label>
@@ -141,7 +141,7 @@
                     </div>
                     <div class="carousel-item">
                         <a id="A5" runat="server">
-                            <asp:Image ID="ImgReduc5" CssClass="img_slide" runat="server" />
+                            <asp:Image ID="ImgReduc5" CssClass="img_slide" runat="server" alt="JeuxVideo"/>
                         </a>
                         <div class="discount">
                             <asp:Label ID="LblDiscount5" CssClass="LblDiscount" runat="server" Text=""></asp:Label>
@@ -149,7 +149,7 @@
                     </div>
                     <div class="carousel-item">
                         <a id="A6" runat="server">
-                            <asp:Image ID="ImgReduc6" CssClass="img_slide" runat="server" />
+                            <asp:Image ID="ImgReduc6" CssClass="img_slide" runat="server" alt="JeuxVideo"/>
                         </a>
                         <div class="discount">
                             <asp:Label ID="LblDiscount6" CssClass="LblDiscount" runat="server" Text=""></asp:Label>
@@ -157,7 +157,7 @@
                     </div>
                     <div class="carousel-item">
                         <a id="A7" runat="server">
-                            <asp:Image ID="ImgReduc7" CssClass="img_slide" runat="server" />
+                            <asp:Image ID="ImgReduc7" CssClass="img_slide" runat="server" alt="JeuxVideo"/>
                         </a>
                         <div class="discount">
                             <asp:Label ID="LblDiscount7" CssClass="LblDiscount" runat="server" Text=""></asp:Label>
@@ -165,7 +165,7 @@
                     </div>
                     <div class="carousel-item">
                         <a id="A8" runat="server">
-                            <asp:Image ID="ImgReduc8" CssClass="img_slide" runat="server" />
+                            <asp:Image ID="ImgReduc8" CssClass="img_slide" runat="server" alt="JeuxVideo"/>
                         </a>
                         <div class="discount">
                             <asp:Label ID="LblDiscount8" CssClass="LblDiscount" runat="server" Text=""></asp:Label>
@@ -173,7 +173,7 @@
                     </div>
                     <div class="carousel-item">
                         <a id="A9" runat="server">
-                            <asp:Image ID="ImgReduc9" CssClass="img_slide" runat="server" />
+                            <asp:Image ID="ImgReduc9" CssClass="img_slide" runat="server" alt="JeuxVideo"/>
                         </a>
                         <div class="discount">
                             <asp:Label ID="LblDiscount9" CssClass="LblDiscount" runat="server" Text=""></asp:Label>

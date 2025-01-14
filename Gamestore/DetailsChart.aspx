@@ -40,7 +40,7 @@
     <div class="grid_summary_compared">
         <asp:GridView ID="GridViewComparedSalesSummary" runat="server" AutoGenerateColumns="false" CssClass="gridview-container">
             <Columns>
-                <asp:TemplateField HeaderText="Mois">
+                <asp:TemplateField HeaderText="Mois" HeaderStyle-ForeColor="White">
                     <ItemTemplate>
                         <div class="gridview-item">
                             <div class="gridview-header">Mois</div>
@@ -48,7 +48,7 @@
                         </div>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Nombre Total de Ventes">
+                <asp:TemplateField HeaderText="Nombre Total de Ventes" HeaderStyle-ForeColor="White">
                     <ItemTemplate>
                         <div class="gridview-item">
                             <div class="gridview-header">Ventes</div>
@@ -56,7 +56,7 @@
                         </div>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Prix Total des Ventes">
+                <asp:TemplateField HeaderText="Prix Total des Ventes" HeaderStyle-ForeColor="White">
                     <ItemTemplate>
                         <div class="gridview-item">
                             <div class="gridview-header">Prix Total</div>

@@ -78,7 +78,7 @@ namespace Gamestore
             //Initialisation du 2ème carousel pour les promotions
             List<String> listReductionGame = new List<String>();
             List<String> listReductionTitleGame = new List<String>();
-            List<float> listDiscountReduction = new List<float>();
+            List<int> listDiscountReduction = new List<int>();
 
             listReductionGame = objDal.RecupLastPromotedJeuxVideo();
             listReductionTitleGame = objDal.RecupLastTitlePromotedJeuxVideo();
